@@ -30,8 +30,8 @@ page {
 }
 
 .orders-switch .item.active .txt {
-  color: #ab956d;
-  border-bottom: 4rpx solid #ab956d;
+  color: #FF3000;
+  border-bottom: 4rpx solid #FF3000;
 }
 
 .no-order {

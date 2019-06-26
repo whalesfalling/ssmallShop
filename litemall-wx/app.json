@@ -19,7 +19,6 @@
     "pages/auth/register/register",
     "pages/auth/reset/reset",
     "pages/payResult/payResult",
-    "pages/comment/comment",
     "pages/commentPost/commentPost",
     "pages/topic/topic",
     "pages/topicComment/topicComment",
@@ -37,14 +36,15 @@
     "pages/groupon/grouponDetail/grouponDetail",
     "pages/groupon/grouponList/grouponList",
     "pages/coupon/coupon",
-    "pages/help/help"
+    "pages/help/help",
+    "pages/donate/donate"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff3000",
     "navigationBarTitleText": "一元乐购小程序商城",
     "enablePullDownRefresh": true,
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#ff3000",
+    "backgroundColor": "#f9f9f9",
     "backgroundTextStyle": "dark"
   },
   "tabBar": {
@@ -70,6 +70,12 @@
         "iconPath": "static/images/cart.png",
         "selectedIconPath": "static/images/cart@selected.png",
         "text": "购物车"
+      },
+      {
+        "pagePath":"pages/donate/donate",
+        "iconPath":"static/images/donate.png",
+        "selectedIconPath":"static/images/donate@selected.png",
+        "text": "社区"
       },
       {
         "pagePath": "pages/ucenter/index/index",

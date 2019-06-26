@@ -143,7 +143,7 @@
 .goods-info .retailPrice {
   padding-left: 5%;
   font-size: 30rpx;
-  color: #a78845;
+  color: #FF3000;
 }
 
 .goods-info .brand {

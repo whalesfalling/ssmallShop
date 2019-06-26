@@ -1,0 +1,116 @@
+.a-section {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.a-brand .b {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.a-brand .wrap {
+  position: relative;
+}
+
+.a-brand .img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.a-brand .mt {
+  position: absolute;
+  z-index: 2;
+  padding: 27rpx 31rpx;
+  left: 0;
+  top: 0;
+}
+
+.a-brand .mt .brand {
+  display: block;
+  font-size: 33rpx;
+  height: 43rpx;
+  color: #fff;
+}
+
+.a-brand .mt .price, .a-brand .mt .unit {
+  font-size: 25rpx;
+  color: #fff;
+}
+
+.a-brand .item-1 {
+  float: left;
+  width: 375rpx;
+  height: 252rpx;
+  overflow: hidden;
+  border-top: 1rpx solid #fff;
+  margin-left: 1rpx;
+}
+
+.a-brand .item-1:nth-child(2n+1) {
+  margin-left: 0;
+  width: 374rpx;
+}
+
+.a-brand .item-1 .img {
+  width: 375rpx;
+  height: 253rpx;
+}
+
+.a-topic .b {
+  height: 100%;
+  width: 750rpx;
+  padding: 0 0 48rpx 0;
+}
+
+.a-topic .b .list {
+  height: 100%;
+  width: 750rpx;
+  white-space: nowrap;
+}
+
+.a-topic .b .item {
+  height: 533rpx;
+  width: 695.5rpx;
+  margin-left: 36rpx;
+  overflow: hidden;
+}
+
+.a-topic .b .item:last-child {
+  margin-right: 30rpx;
+}
+
+.a-topic .b .img {
+  height: 387.5rpx;
+  width: 680.5rpx;
+  margin-bottom: 30rpx;
+}
+
+.a-topic .b .np {
+  height: 35rpx;
+  margin-bottom: 13.5rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.a-topic .b .np .price {
+  margin-left: 20.8rpx;
+  color: #ab956d;
+}
+
+.a-topic .b .desc {
+  display: block;
+  height: 30rpx;
+  color: #999;
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

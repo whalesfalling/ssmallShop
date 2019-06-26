@@ -1,0 +1,16 @@
+<view class="a-section a-topic" wx:if="topics.length > 0">
+    <view class="b">
+      <scroll-view scroll-y class="list">
+        <view class="item" wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+          <navigator url="../topicDetail/topicDetail?id={{item.id}}">
+            <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+            <view class="np">
+              <text class="name">{{item.title}}</text>
+              <text class="price">￥{{item.price}}元起</text>
+            </view>
+            <text class="desc">{{item.subtitle}}</text>
+          </navigator>
+        </view>
+      </scroll-view>
+    </view>
+  </view>

@@ -50,31 +50,7 @@
     <view class="t">{{checkedSpecText}}</view>
     <image class="i" src="/static/images/address_right.png" background-size="cover"></image>
   </view>
-  <view class="comments" wx:if="{{comment.count > 0}}">
-    <view class="h">
-      <navigator url="/pages/comment/comment?valueId={{goods.id}}&type=0">
-        <text class="t">评价({{comment.count > 999 ? '999+' : comment.count}})</text>
-        <text class="i">查看全部</text>
-      </navigator>
-    </view>
-    <view class="b">
-      <view class="item" wx:for="{{comment.data}}" wx:key="id">
-        <view class="info">
-          <view class="user">
-            <image src="{{item.avatar}}"></image>
-            <text>{{item.nickname}}</text>
-          </view>
-          <view class="time">{{item.addTime}}</view>
-        </view>
-        <view class="content">
-          {{item.content}}
-        </view>
-        <view class="imgs" wx:if="{{item.picList.length > 0}}">
-          <image class="img" wx:for="{{item.picList}}" wx:key="*this" wx:for-item="iitem" src="{{iitem}} "></image>
-        </view>
-      </view>
-    </view>
-  </view>
+  
   <view class="goods-attr">
     <view class="t">商品参数</view>
     <view class="l">

@@ -12,12 +12,12 @@ Page({
   data: {
     load_statue: true,
     shopInfo: {
-      name: 'litemall',
-      address: 'https://github.com/linlinjava/litemall',
+      name: '一元乐购微信小程序',
+      address: '上海市宝山区锦秋路',
       latitude: 31.201900,
       longitude: 121.587839,
       linkPhone: '021-xxxx-xxxx',
-      qqNumber: '738696120'
+      qqNumber: '729613378'
     },
   },
 

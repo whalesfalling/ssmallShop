@@ -12,7 +12,7 @@
 .cate-nav-body {
   height: 84rpx;
   white-space: nowrap;
-  background:-webkit-linear-gradient(left,#ff9000,#ff7500,#ff6000,#ff4500,#ff3000) no-repeat;
+  background: #fff;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
@@ -35,8 +35,8 @@
 }
 
 .cate-nav .item.active .name {
-  color: #EEE;
-  border-bottom: 2px solid #ff1000;
+  color: #ff3000;
+  border-bottom: 2px solid #ff3000;
 }
 
 .cate-item {
@@ -114,5 +114,5 @@
   height: 30rpx;
   text-align: center;
   font-size: 30rpx;
-  color: #ab956d;
+  color: #ff3000;
 }

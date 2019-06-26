@@ -25,7 +25,7 @@
       <view class="title">
         <view>
           <navigator url="/pages/groupon/grouponList/grouponList">
-            <text class="txt">团购专区</text>
+            <text class="txt">火热团购</text>
           </navigator>
         </view>
       </view>
@@ -39,7 +39,7 @@
               <view class="header">
                 <text class="name">{{item.name}}</text>
                 <view class="capsule-tag">
-                  <zan-capsule color="#a78845" leftText="{{item.grouponMember}}人成团" rightText="立减{{item.grouponDiscount}}" />
+                  <zan-capsule color="#FF3000" leftText="{{item.grouponMember}}人成团" rightText="立减{{item.grouponDiscount}}" />
                 </view>
               </view>
               <text class="desc">{{item.brief}}</text>
@@ -54,12 +54,33 @@
     </view>
   </view>
 
+<view class="a-section a-brand">
+    <view class="h">
+      <navigator url="../brand/brand">
+        <text class="txt">品牌制造商直供</text>
+      </navigator>
+    </view>
+    <view class="b">
+      <view class="item item-1" wx:for="{{brands}}" wx:key="id">
+        <navigator url="/pages/brandDetail/brandDetail?id={{item.id}}">
+          <view class="wrap">
+            <image class="img" src="{{item.picUrl}}" mode="aspectFill"></image>
+            <view class="mt">
+              <text class="brand">{{item.name}}</text>
+              <text class="price">{{item.floorPrice}}</text>
+              <text class="unit">元起</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
  
   <view class="a-section a-new" wx:if="{{newGoods.length > 0}}">
     <view class="h">
       <view>
         <navigator url="../newGoods/newGoods">
-          <text class="txt">周一周四 · 新品首发</text>
+          <text class="txt">新品首发</text>
         </navigator>
       </view>
     </view>
@@ -98,29 +119,6 @@
     </view>
   </view>
 
-  <view class="a-section a-topic" wx:if="topics.length > 0">
-    <view class="h">
-      <view>
-        <navigator url="/pages/topic/topic">
-          <text class="txt">专题精选</text>
-        </navigator>
-      </view>
-    </view>
-    <view class="b">
-      <scroll-view scroll-x class="list">
-        <view class="item" wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-          <navigator url="../topicDetail/topicDetail?id={{item.id}}">
-            <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
-            <view class="np">
-              <text class="name">{{item.title}}</text>
-              <text class="price">￥{{item.price}}元起</text>
-            </view>
-            <text class="desc">{{item.subtitle}}</text>
-          </navigator>
-        </view>
-      </scroll-view>
-    </view>
-  </view>
   <view class="good-grid" wx:for="{{floorGoods}}" wx:key="id">
     <view class="h">
       <text>{{item.name}}</text>

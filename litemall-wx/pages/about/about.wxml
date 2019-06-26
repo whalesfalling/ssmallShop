@@ -11,7 +11,7 @@
 
   <view class="about-item">
     <view class="item-left">
-      <label>项目地址: </label>
+      <label>公司地址: </label>
        <text>{{shopInfo.address}}</text> 
     </view>
 
