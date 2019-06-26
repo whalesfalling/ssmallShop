@@ -95,7 +95,7 @@ export const asyncRouterMap = [
         name: 'user',
         meta: {
           perms: ['GET /admin/user/list'],
-          title: '会员管理',
+          title: '客户列表',
           noCache: true
         }
       },
@@ -106,36 +106,6 @@ export const asyncRouterMap = [
         meta: {
           perms: ['GET /admin/address/list'],
           title: '收货地址',
-          noCache: true
-        }
-      },
-      {
-        path: 'collect',
-        component: () => import('@/views/user/collect'),
-        name: 'collect',
-        meta: {
-          perms: ['GET /admin/collect/list'],
-          title: '会员收藏',
-          noCache: true
-        }
-      },
-      {
-        path: 'footprint',
-        component: () => import('@/views/user/footprint'),
-        name: 'footprint',
-        meta: {
-          perms: ['GET /admin/footprint/list'],
-          title: '会员足迹',
-          noCache: true
-        }
-      },
-      {
-        path: 'history',
-        component: () => import('@/views/user/history'),
-        name: 'history',
-        meta: {
-          perms: ['GET /admin/history/list'],
-          title: '搜索历史',
           noCache: true
         }
       },
@@ -266,16 +236,6 @@ export const asyncRouterMap = [
           noCache: true
         },
         hidden: true
-      },
-      {
-        path: 'comment',
-        component: () => import('@/views/goods/comment'),
-        name: 'goodsComment',
-        meta: {
-          perms: ['GET /admin/comment/list', 'POST /admin/comment/delete'],
-          title: '商品评论',
-          noCache: true
-        }
       }
     ]
   },
@@ -291,67 +251,14 @@ export const asyncRouterMap = [
     },
     children: [
       {
-        path: 'ad',
-        component: () => import('@/views/promotion/ad'),
-        name: 'ad',
-        meta: {
-          perms: ['GET /admin/ad/list', 'POST /admin/ad/create', 'GET /admin/ad/read', 'POST /admin/ad/update', 'POST /admin/ad/delete'],
-          title: '广告管理',
-          noCache: true
-        }
-      },
-      {
         path: 'coupon',
         component: () => import('@/views/promotion/coupon'),
         name: 'coupon',
         meta: {
           perms: ['GET /admin/coupon/list', 'POST /admin/coupon/create', 'POST /admin/coupon/update', 'POST /admin/coupon/delete'],
-          title: '优惠券管理',
+          title: '积分管理',
           noCache: true
         }
-      },
-      {
-        path: 'couponDetail',
-        component: () => import('@/views/promotion/couponDetail'),
-        name: 'couponDetail',
-        meta: {
-          perms: ['GET /admin/coupon/list', 'GET /admin/coupon/listuser'],
-          title: '优惠券详情',
-          noCache: true
-        },
-        hidden: true
-      },
-      {
-        path: 'topic',
-        component: () => import('@/views/promotion/topic'),
-        name: 'topic',
-        meta: {
-          perms: ['GET /admin/topic/list', 'POST /admin/topic/create', 'GET /admin/topic/read', 'POST /admin/topic/update', 'POST /admin/topic/delete'],
-          title: '专题管理',
-          noCache: true
-        }
-      },
-      {
-        path: 'topic-create',
-        component: () => import('@/views/promotion/topicCreate'),
-        name: 'topicCreate',
-        meta: {
-          perms: ['POST /admin/topic/create'],
-          title: '专题创建',
-          noCache: true
-        },
-        hidden: true
-      },
-      {
-        path: 'topic-edit',
-        component: () => import('@/views/promotion/topicEdit'),
-        name: 'topicEdit',
-        meta: {
-          perms: ['GET /admin/topic/read', 'POST /admin/topic/update'],
-          title: '专题编辑',
-          noCache: true
-        },
-        hidden: true
       },
       {
         path: 'groupon-rule',
@@ -414,16 +321,6 @@ export const asyncRouterMap = [
         meta: {
           perms: ['GET /admin/role/list', 'POST /admin/role/create', 'POST /admin/role/update', 'POST /admin/role/delete', 'GET /admin/role/permissions', 'POST /admin/role/permissions'],
           title: '角色管理',
-          noCache: true
-        }
-      },
-      {
-        path: 'os',
-        component: () => import('@/views/sys/os'),
-        name: 'os',
-        meta: {
-          perms: ['GET /admin/storage/list', 'POST /admin/storage/create', 'POST /admin/storage/update', 'POST /admin/storage/delete'],
-          title: '对象存储',
           noCache: true
         }
       }
@@ -557,10 +454,6 @@ export const asyncRouterMap = [
       {
         path: 'https://www.alibabacloud.com/zh/product/oss',
         meta: { title: '阿里云存储', icon: 'link' }
-      },
-      {
-        path: 'https://www.qiniu.com/products/kodo',
-        meta: { title: '七牛云存储', icon: 'link' }
       },
       {
         path: 'http://www.kdniao.com/api-track',

@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `litemall_ad`
+-- Table structure for table `pp_ad`
 --
 
-DROP TABLE IF EXISTS `litemall_ad`;
+DROP TABLE IF EXISTS `pp_ad`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_ad` (
+CREATE TABLE `pp_ad` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(63) NOT NULL DEFAULT '' COMMENT '广告标题',
   `link` varchar(255) NOT NULL DEFAULT '' COMMENT '所广告的商品页面或者活动页面链接地址',
@@ -41,13 +41,13 @@ CREATE TABLE `litemall_ad` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_address`
+-- Table structure for table `pp_address`
 --
 
-DROP TABLE IF EXISTS `litemall_address`;
+DROP TABLE IF EXISTS `pp_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_address` (
+CREATE TABLE `pp_address` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(63) NOT NULL DEFAULT '' COMMENT '收货人名称',
   `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
@@ -68,13 +68,13 @@ CREATE TABLE `litemall_address` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_admin`
+-- Table structure for table `pp_admin`
 --
 
-DROP TABLE IF EXISTS `litemall_admin`;
+DROP TABLE IF EXISTS `pp_admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_admin` (
+CREATE TABLE `pp_admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(63) NOT NULL DEFAULT '' COMMENT '管理员名称',
   `password` varchar(63) NOT NULL DEFAULT '' COMMENT '管理员密码',
@@ -90,13 +90,13 @@ CREATE TABLE `litemall_admin` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_brand`
+-- Table structure for table `pp_brand`
 --
 
-DROP TABLE IF EXISTS `litemall_brand`;
+DROP TABLE IF EXISTS `pp_brand`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_brand` (
+CREATE TABLE `pp_brand` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '' COMMENT '品牌商名称',
   `desc` varchar(255) NOT NULL DEFAULT '' COMMENT '品牌商简介',
@@ -111,13 +111,13 @@ CREATE TABLE `litemall_brand` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_cart`
+-- Table structure for table `pp_cart`
 --
 
-DROP TABLE IF EXISTS `litemall_cart`;
+DROP TABLE IF EXISTS `pp_cart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_cart` (
+CREATE TABLE `pp_cart` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL COMMENT '用户表的用户ID',
   `goods_id` int(11) DEFAULT NULL COMMENT '商品表的商品ID',
@@ -137,13 +137,13 @@ CREATE TABLE `litemall_cart` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_category`
+-- Table structure for table `pp_category`
 --
 
-DROP TABLE IF EXISTS `litemall_category`;
+DROP TABLE IF EXISTS `pp_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_category` (
+CREATE TABLE `pp_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(63) NOT NULL DEFAULT '' COMMENT '类目名称',
   `keywords` varchar(1023) NOT NULL DEFAULT '' COMMENT '类目关键字，以JSON数组格式',
@@ -162,13 +162,13 @@ CREATE TABLE `litemall_category` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_collect`
+-- Table structure for table `pp_collect`
 --
 
-DROP TABLE IF EXISTS `litemall_collect`;
+DROP TABLE IF EXISTS `pp_collect`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_collect` (
+CREATE TABLE `pp_collect` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
   `value_id` int(11) NOT NULL DEFAULT '0' COMMENT '如果type=0，则是商品ID；如果type=1，则是专题ID',
@@ -183,13 +183,13 @@ CREATE TABLE `litemall_collect` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_comment`
+-- Table structure for table `pp_comment`
 --
 
-DROP TABLE IF EXISTS `litemall_comment`;
+DROP TABLE IF EXISTS `pp_comment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_comment` (
+CREATE TABLE `pp_comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `value_id` int(11) NOT NULL DEFAULT '0' COMMENT '如果type=0，则是商品评论；如果是type=1，则是专题评论。',
   `type` tinyint(3) NOT NULL DEFAULT '0' COMMENT '评论类型，如果type=0，则是商品评论；如果是type=1，则是专题评论；如果type=3，则是订单商品评论。',
@@ -207,13 +207,13 @@ CREATE TABLE `litemall_comment` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_coupon`
+-- Table structure for table `pp_coupon`
 --
 
-DROP TABLE IF EXISTS `litemall_coupon`;
+DROP TABLE IF EXISTS `pp_coupon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_coupon` (
+CREATE TABLE `pp_coupon` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(63) NOT NULL COMMENT '优惠券名称',
   `desc` varchar(127) DEFAULT '' COMMENT '优惠券介绍，通常是显示优惠券使用限制文字',
@@ -239,13 +239,13 @@ CREATE TABLE `litemall_coupon` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_coupon_user`
+-- Table structure for table `pp_coupon_user`
 --
 
-DROP TABLE IF EXISTS `litemall_coupon_user`;
+DROP TABLE IF EXISTS `pp_coupon_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_coupon_user` (
+CREATE TABLE `pp_coupon_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL COMMENT '用户ID',
   `coupon_id` int(11) NOT NULL COMMENT '优惠券ID',
@@ -262,13 +262,13 @@ CREATE TABLE `litemall_coupon_user` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_feedback`
+-- Table structure for table `pp_feedback`
 --
 
-DROP TABLE IF EXISTS `litemall_feedback`;
+DROP TABLE IF EXISTS `pp_feedback`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_feedback` (
+CREATE TABLE `pp_feedback` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
   `username` varchar(63) NOT NULL DEFAULT '' COMMENT '用户名称',
@@ -287,13 +287,13 @@ CREATE TABLE `litemall_feedback` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_footprint`
+-- Table structure for table `pp_footprint`
 --
 
-DROP TABLE IF EXISTS `litemall_footprint`;
+DROP TABLE IF EXISTS `pp_footprint`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_footprint` (
+CREATE TABLE `pp_footprint` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户表的用户ID',
   `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '浏览商品ID',
@@ -305,13 +305,13 @@ CREATE TABLE `litemall_footprint` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_goods`
+-- Table structure for table `pp_goods`
 --
 
-DROP TABLE IF EXISTS `litemall_goods`;
+DROP TABLE IF EXISTS `pp_goods`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_goods` (
+CREATE TABLE `pp_goods` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `goods_sn` varchar(63) NOT NULL DEFAULT '' COMMENT '商品编号',
   `name` varchar(127) NOT NULL DEFAULT '' COMMENT '商品名称',
@@ -342,13 +342,13 @@ CREATE TABLE `litemall_goods` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_goods_attribute`
+-- Table structure for table `pp_goods_attribute`
 --
 
-DROP TABLE IF EXISTS `litemall_goods_attribute`;
+DROP TABLE IF EXISTS `pp_goods_attribute`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_goods_attribute` (
+CREATE TABLE `pp_goods_attribute` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品表的商品ID',
   `attribute` varchar(255) NOT NULL COMMENT '商品参数名称',
@@ -362,13 +362,13 @@ CREATE TABLE `litemall_goods_attribute` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_goods_product`
+-- Table structure for table `pp_goods_product`
 --
 
-DROP TABLE IF EXISTS `litemall_goods_product`;
+DROP TABLE IF EXISTS `pp_goods_product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_goods_product` (
+CREATE TABLE `pp_goods_product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品表的商品ID',
   `specifications` varchar(1023) NOT NULL COMMENT '商品规格值列表，采用JSON数组格式',
@@ -383,13 +383,13 @@ CREATE TABLE `litemall_goods_product` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_goods_specification`
+-- Table structure for table `pp_goods_specification`
 --
 
-DROP TABLE IF EXISTS `litemall_goods_specification`;
+DROP TABLE IF EXISTS `pp_goods_specification`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_goods_specification` (
+CREATE TABLE `pp_goods_specification` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品表的商品ID',
   `specification` varchar(255) NOT NULL DEFAULT '' COMMENT '商品规格名称',
@@ -404,17 +404,17 @@ CREATE TABLE `litemall_goods_specification` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_groupon`
+-- Table structure for table `pp_groupon`
 --
 
-DROP TABLE IF EXISTS `litemall_groupon`;
+DROP TABLE IF EXISTS `pp_groupon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_groupon` (
+CREATE TABLE `pp_groupon` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL COMMENT '关联的订单ID',
   `groupon_id` int(11) DEFAULT '0' COMMENT '参与的团购ID，仅当user_type不是1',
-  `rules_id` int(11) NOT NULL COMMENT '团购规则ID，关联litemall_groupon_rules表ID字段',
+  `rules_id` int(11) NOT NULL COMMENT '团购规则ID，关联pp_groupon_rules表ID字段',
   `user_id` int(11) NOT NULL COMMENT '用户ID',
   `creator_user_id` int(11) NOT NULL COMMENT '创建者ID',
   `add_time` datetime NOT NULL COMMENT '创建时间',
@@ -427,13 +427,13 @@ CREATE TABLE `litemall_groupon` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_groupon_rules`
+-- Table structure for table `pp_groupon_rules`
 --
 
-DROP TABLE IF EXISTS `litemall_groupon_rules`;
+DROP TABLE IF EXISTS `pp_groupon_rules`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_groupon_rules` (
+CREATE TABLE `pp_groupon_rules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `goods_id` int(11) NOT NULL COMMENT '商品表的商品ID',
   `goods_name` varchar(127) NOT NULL COMMENT '商品名称',
@@ -449,13 +449,13 @@ CREATE TABLE `litemall_groupon_rules` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_issue`
+-- Table structure for table `pp_issue`
 --
 
-DROP TABLE IF EXISTS `litemall_issue`;
+DROP TABLE IF EXISTS `pp_issue`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_issue` (
+CREATE TABLE `pp_issue` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `question` varchar(255) DEFAULT NULL COMMENT '问题标题',
   `answer` varchar(255) DEFAULT NULL COMMENT '问题答案',
@@ -467,13 +467,13 @@ CREATE TABLE `litemall_issue` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_keyword`
+-- Table structure for table `pp_keyword`
 --
 
-DROP TABLE IF EXISTS `litemall_keyword`;
+DROP TABLE IF EXISTS `pp_keyword`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_keyword` (
+CREATE TABLE `pp_keyword` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `keyword` varchar(127) NOT NULL DEFAULT '' COMMENT '关键字',
   `url` varchar(255) NOT NULL DEFAULT '' COMMENT '关键字的跳转链接',
@@ -488,13 +488,13 @@ CREATE TABLE `litemall_keyword` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_log`
+-- Table structure for table `pp_log`
 --
 
-DROP TABLE IF EXISTS `litemall_log`;
+DROP TABLE IF EXISTS `pp_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_log` (
+CREATE TABLE `pp_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `admin` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '管理员',
   `ip` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '管理员地址',
@@ -511,13 +511,13 @@ CREATE TABLE `litemall_log` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_order`
+-- Table structure for table `pp_order`
 --
 
-DROP TABLE IF EXISTS `litemall_order`;
+DROP TABLE IF EXISTS `pp_order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_order` (
+CREATE TABLE `pp_order` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL COMMENT '用户表的用户ID',
   `order_sn` varchar(63) NOT NULL COMMENT '订单编号',
@@ -549,13 +549,13 @@ CREATE TABLE `litemall_order` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_order_goods`
+-- Table structure for table `pp_order_goods`
 --
 
-DROP TABLE IF EXISTS `litemall_order_goods`;
+DROP TABLE IF EXISTS `pp_order_goods`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_order_goods` (
+CREATE TABLE `pp_order_goods` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL DEFAULT '0' COMMENT '订单表的订单ID',
   `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品表的商品ID',
@@ -577,13 +577,13 @@ CREATE TABLE `litemall_order_goods` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_permission`
+-- Table structure for table `pp_permission`
 --
 
-DROP TABLE IF EXISTS `litemall_permission`;
+DROP TABLE IF EXISTS `pp_permission`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_permission` (
+CREATE TABLE `pp_permission` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_id` int(11) DEFAULT NULL COMMENT '角色ID',
   `permission` varchar(63) DEFAULT NULL COMMENT '权限',
@@ -595,13 +595,13 @@ CREATE TABLE `litemall_permission` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_region`
+-- Table structure for table `pp_region`
 --
 
-DROP TABLE IF EXISTS `litemall_region`;
+DROP TABLE IF EXISTS `pp_region`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_region` (
+CREATE TABLE `pp_region` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pid` int(11) NOT NULL DEFAULT '0' COMMENT '行政区域父ID，例如区县的pid指向市，市的pid指向省，省的pid则是0',
   `name` varchar(120) NOT NULL DEFAULT '' COMMENT '行政区域名称',
@@ -615,13 +615,13 @@ CREATE TABLE `litemall_region` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_role`
+-- Table structure for table `pp_role`
 --
 
-DROP TABLE IF EXISTS `litemall_role`;
+DROP TABLE IF EXISTS `pp_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_role` (
+CREATE TABLE `pp_role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(63) NOT NULL COMMENT '角色名称',
   `desc` varchar(1023) DEFAULT NULL COMMENT '角色描述',
@@ -635,13 +635,13 @@ CREATE TABLE `litemall_role` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_search_history`
+-- Table structure for table `pp_search_history`
 --
 
-DROP TABLE IF EXISTS `litemall_search_history`;
+DROP TABLE IF EXISTS `pp_search_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_search_history` (
+CREATE TABLE `pp_search_history` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL COMMENT '用户表的用户ID',
   `keyword` varchar(63) NOT NULL COMMENT '搜索关键字',
@@ -654,13 +654,13 @@ CREATE TABLE `litemall_search_history` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_storage`
+-- Table structure for table `pp_storage`
 --
 
-DROP TABLE IF EXISTS `litemall_storage`;
+DROP TABLE IF EXISTS `pp_storage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_storage` (
+CREATE TABLE `pp_storage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(63) NOT NULL COMMENT '文件的唯一索引',
   `name` varchar(255) NOT NULL COMMENT '文件名',
@@ -675,13 +675,13 @@ CREATE TABLE `litemall_storage` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_system`
+-- Table structure for table `pp_system`
 --
 
-DROP TABLE IF EXISTS `litemall_system`;
+DROP TABLE IF EXISTS `pp_system`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_system` (
+CREATE TABLE `pp_system` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key_name` varchar(255) NOT NULL COMMENT '系统配置名',
   `key_value` varchar(255) NOT NULL COMMENT '系统配置值',
@@ -693,13 +693,13 @@ CREATE TABLE `litemall_system` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_topic`
+-- Table structure for table `pp_topic`
 --
 
-DROP TABLE IF EXISTS `litemall_topic`;
+DROP TABLE IF EXISTS `pp_topic`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_topic` (
+CREATE TABLE `pp_topic` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL DEFAULT '''' COMMENT '专题标题',
   `subtitle` varchar(255) DEFAULT '''' COMMENT '专题子标题',
@@ -718,13 +718,13 @@ CREATE TABLE `litemall_topic` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_user`
+-- Table structure for table `pp_user`
 --
 
-DROP TABLE IF EXISTS `litemall_user`;
+DROP TABLE IF EXISTS `pp_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_user` (
+CREATE TABLE `pp_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(63) NOT NULL COMMENT '用户名称',
   `password` varchar(63) NOT NULL DEFAULT '' COMMENT '用户密码',
@@ -748,13 +748,13 @@ CREATE TABLE `litemall_user` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `litemall_user_formid`
+-- Table structure for table `pp_user_formid`
 --
 
-DROP TABLE IF EXISTS `litemall_user_formid`;
+DROP TABLE IF EXISTS `pp_user_formid`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `litemall_user_formid` (
+CREATE TABLE `pp_user_formid` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `formId` varchar(63) NOT NULL COMMENT '缓存的FormId',
   `isprepay` tinyint(1) NOT NULL COMMENT '是FormId还是prepayId',
@@ -768,6 +768,35 @@ CREATE TABLE `litemall_user_formid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+CREATE TABLE `pp_user_credits` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL COMMENT '用户id',
+	 credits decimal(10,2) COMMENT'积分',
+  `add_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='用户积分表';
+
+CREATE TABLE `pp_credits_rule` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+	`number` smallint(5) COMMENT '每天可获得多少次',
+	 credits decimal(10,2) COMMENT'每次可获得多少积分',
+	 credits_ratio decimal(10,2) COMMENT'多少积分等于1元',
+  `add_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='积分规则表';
+
+CREATE TABLE `pp_user_credits_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL COMMENT '用户id',
+	 credits decimal(10,2) COMMENT'获得积分数',
+	 gain_date date COMMENT '获得日期',
+  `add_time` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='用户积分记录表';
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
