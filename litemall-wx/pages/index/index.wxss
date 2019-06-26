@@ -518,7 +518,7 @@
   height: 88rpx;
   width: 100%;
   padding: 0 30rpx;
-  background: #fff;
+  background: -webkit-linear-gradient(left,#ff9000,#ff7500,#ff6000,#ff4500,#ff3000) no-repeat;
   display: flex;
   align-items: center;
 }

@@ -2,7 +2,7 @@
 
 .container {
   box-sizing: border-box;
-  background-color: #f4f4f4;
+  background: -webkit-linear-gradient(left,#f3f3f3,#f4f4f4,#f5f5f5,#f6f6f6,#f7f7f7) no-repeat;
   font-family: PingFangSC-Light, helvetica, 'Heiti SC';
 }
 

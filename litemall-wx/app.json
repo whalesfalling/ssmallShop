@@ -40,17 +40,17 @@
     "pages/help/help"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#FFFFFF",
-    "navigationBarTitleText": "litemall小程序商城",
+    "navigationBarBackgroundColor": "#ff3000",
+    "navigationBarTitleText": "一元乐购小程序商城",
     "enablePullDownRefresh": true,
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ff3000",
     "backgroundTextStyle": "dark"
   },
   "tabBar": {
     "backgroundColor": "#fafafa",
     "borderStyle": "white",
-    "selectedColor": "#AB956D",
+    "selectedColor": "#ff3000",
     "color": "#666",
     "list": [
       {

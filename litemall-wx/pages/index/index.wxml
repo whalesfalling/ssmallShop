@@ -20,35 +20,6 @@
     </navigator>
   </view>
 
-  <view class="a-section a-coupon" wx:if="{{coupon.length > 0}}">
-    <view class="h">
-      <view class="title">
-        <view>
-          <navigator url="/pages/coupon/coupon">
-            <text class="txt">优惠券</text>
-          </navigator>
-        </view>
-      </view>
-    </view>
-    <view wx:if="{{coupon.length>0}}" class="b">
-      <view class="item" wx:for="{{coupon}}" wx:for-index="index" wx:for-item="item" wx:key="id" bindtap="getCoupon" data-index="{{item.id}}">
-        <view class="tag">{{item.tag}}</view>
-        <view class="content">
-          <view class="left">
-            <view class="discount">{{item.discount}}元</view>
-            <view class="min"> 满{{item.min}}元使用</view>
-          </view>
-          <view class="right">
-            <view class="name">{{item.name}}</view>
-            <view class="desc">{{item.desc}}</view>
-            <view class="time" wx:if="{{item.days != 0}}">有效期：{{item.days}}天</view>
-            <view class="time" wx:else> 有效期：{{item.startTime}} - {{item.endTime}}</view>
-          </view>
-        </view>
-      </view>
-    </view>
-  </view>
-
   <view class="a-section a-groupon" wx:if="{{groupons.length > 0}}">
     <view class="h">
       <view class="title">
@@ -83,27 +54,7 @@
     </view>
   </view>
 
-  <view class="a-section a-brand">
-    <view class="h">
-      <navigator url="../brand/brand">
-        <text class="txt">品牌制造商直供</text>
-      </navigator>
-    </view>
-    <view class="b">
-      <view class="item item-1" wx:for="{{brands}}" wx:key="id">
-        <navigator url="/pages/brandDetail/brandDetail?id={{item.id}}">
-          <view class="wrap">
-            <image class="img" src="{{item.picUrl}}" mode="aspectFill"></image>
-            <view class="mt">
-              <text class="brand">{{item.name}}</text>
-              <text class="price">{{item.floorPrice}}</text>
-              <text class="unit">元起</text>
-            </view>
-          </view>
-        </navigator>
-      </view>
-    </view>
-  </view>
+ 
   <view class="a-section a-new" wx:if="{{newGoods.length > 0}}">
     <view class="h">
       <view>

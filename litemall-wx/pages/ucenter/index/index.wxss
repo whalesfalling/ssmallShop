@@ -12,7 +12,7 @@ page {
 }
 
 .profile-info {
-  background-color: #ab956d;
+  background:-webkit-linear-gradient(left,#ff7000,#ff6000,#ff5000,#ff4000,#ff3000) no-repeat;
   color: #f4f4f4;
   display: flex;
   align-items: center;
