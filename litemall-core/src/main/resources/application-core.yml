@@ -3,9 +3,9 @@ litemall:
   wx:
     app-id: wxdd8e98ed7ebabd31
     app-secret: e1e108c98d009c22047f4973fc35cde7
-    mch-id: 111111
+    mch-id: 1542520771
     mch-key: xxxxxx
-    notify-url: http://www.example.com/wx/order/pay-notify
+    notify-url: https://www.whalesfall.cn/wx/order/pay-notify
     # 商户证书文件路径
     # 请参考“商户证书”一节 https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=4_3
     key-path: xxxxx
@@ -24,9 +24,9 @@ litemall:
     # 短消息模版通知配置
     # 短信息用于通知客户，例如发货短信通知，注意配置格式；template-name，template-templateId 请参考 NotifyType 枚举值
     sms:
-      enable: false
-      appid: 111111111
-      appkey: xxxxxxxxxxxxxx
+      enable: true
+      appid: wxdd8e98ed7ebabd31
+      appkey: e1e108c98d009c22047f4973fc35cde7
       template:
       - name: paySucceed
         templateId: 156349
@@ -92,7 +92,7 @@ litemall:
     local:
       storagePath: storage
       # 这个地方应该是wx模块的WxStorageController的fetch方法对应的地址
-      address: http://localhost:8080/wx/storage/fetch/
+      address: http://www.whalesfall.cn/wx/storage/fetch/
     # 阿里云对象存储配置信息
     aliyun:
       endpoint: oss-cn-shenzhen.aliyuncs.com

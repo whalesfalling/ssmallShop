@@ -7,20 +7,20 @@
 
 # 请设置云主机的IP地址和账户
 # 例如 ubuntu@118.24.0.153
-REMOTE=
+REMOTE=weblogic@148.70.134.173
 # 请设置本地SSH私钥文件id_rsa路径
 # 例如 /home/litemall/id_rsa
 ID_RSA=
 
 if test -z "$REMOTE"
 then
-  echo "请设置云主机登录IP地址和账户"
+  echo "weblogic@148.70.134.173"
   exit -1
 fi
 
 if test -z "$ID_RSA"
 then
-  echo "请设置云主机登录IP地址和账户"
+  echo "weblogic@148.70.134.173"
   exit -1
 fi
 

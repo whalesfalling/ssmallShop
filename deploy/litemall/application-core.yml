@@ -1,11 +1,11 @@
 litemall:
   # 开发者应该设置成自己的wx相关信息
   wx:
-    app-id: wxa5b486c6b918ecfb
-    app-secret: e04004829d4c383b4db7769d88dfbca1
+    app-id: wxdd8e98ed7ebabd31
+    app-secret: e1e108c98d009c22047f4973fc35cde7
     mch-id: 111111
     mch-key: xxxxxx
-    notify-url: http://118.24.0.153:8080/wx/order/pay-notify
+    notify-url: https://www.whalesfall.cn/wx/order/pay-notify
     # 商户证书文件路径
     # 请参考“商户证书”一节 https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=4_3
     key-path: xxxxx
@@ -25,8 +25,8 @@ litemall:
     # 短信息用于通知客户，例如发货短信通知，注意配置格式；template-name，template-templateId 请参考 NotifyType 枚举值
     sms:
       enable: false
-      appid: 111111111
-      appkey: xxxxxxxxxxxxxx
+      appid: 1400226803
+      appkey: f4bbf95ed9bd6b4a2faa2ff496fc15eb
       template:
       - name: paySucceed
         templateId: 156349
@@ -87,11 +87,11 @@ litemall:
   # 对象存储配置
   storage:
     # 当前工作的对象存储模式，分别是local、aliyun、tencent
-    active: local
+    active: tencent
     # 本地对象存储配置信息
     local:
       storagePath: storage
-      address: http://118.24.0.153:8080/wx/storage/fetch/
+      address: https://www.whalesfall.cn/wx/storage/fetch/
     # 阿里云对象存储配置信息
     aliyun:
       endpoint: oss-cn-shenzhen.aliyuncs.com
