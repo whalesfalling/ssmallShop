@@ -1,12 +1,15 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"uglifyFileName": true
+		"nodeModules": true,
+		"autoAudits": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
@@ -241,24 +244,6 @@
 					"id": -1,
 					"name": "团购专区",
 					"pathName": "pages/groupon/grouponList/grouponList",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "选择优惠券",
-					"pathName": "pages/ucenter/couponSelect/couponSelect",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "我的优惠券列表",
-					"pathName": "pages/ucenter/couponList/couponList",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "优惠券列表",
-					"pathName": "pages/coupon/coupon",
 					"query": ""
 				},
 				{

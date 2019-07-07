@@ -5,8 +5,7 @@
           <navigator url="../topicDetail/topicDetail?id={{item.id}}">
             <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
             <view class="np">
-              <text class="name">{{item.title}}</text>
-              <text class="price">￥{{item.price}}元起</text>
+              <text class="price">{{item.title}}</text>
             </view>
             <text class="desc">{{item.subtitle}}</text>
           </navigator>

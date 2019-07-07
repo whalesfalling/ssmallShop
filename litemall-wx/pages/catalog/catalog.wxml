@@ -10,7 +10,7 @@
       <view class="item {{ currentCategory.id == item.id ? 'active' : ''}}" wx:for="{{categoryList}}" wx:key="id" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">{{item.name}}</view>
     </scroll-view>
     <scroll-view class="cate" scroll-y="true">
-      <navigator url="url" class="banner">
+      <navigator url="/pages/category/category?id={{currentCategory.id}}" class="banner">
         <image class="image" src="{{currentCategory.picUrl}}"></image>
         <view class="txt">{{currentCategory.frontName}}</view>
       </navigator>

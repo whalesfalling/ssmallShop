@@ -13,11 +13,11 @@ Page({
     load_statue: true,
     shopInfo: {
       name: '一元乐购微信小程序',
-      address: '上海市宝山区锦秋路',
+      address: '上海市',
       latitude: 31.201900,
       longitude: 121.587839,
       linkPhone: '021-xxxx-xxxx',
-      qqNumber: '729613378'
+      qqNumber: '72961'
     },
   },
 

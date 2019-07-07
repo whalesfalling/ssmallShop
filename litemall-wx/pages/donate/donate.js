@@ -8,6 +8,9 @@ const app = getApp();
 Page({
   data: {
     topics: [],
+    page: 1,
+    limit: 5,
+    totalPages: 1
   },
 
   onShareAppMessage: function () {
@@ -27,22 +30,53 @@ Page({
 
   getIndexData: function () {
     let that = this;
-    util.request(api.IndexUrl).then(function (res) {
+    util.request(api.TopicList ,{
+      page: that.data.page,
+      limit: that.data.limit
+    }).then(function (res) {
+      console.log(res.data);
       if (res.errno === 0) {
         that.setData({
-          topics: res.data.topicList,
+          topics: that.data.topics.concat(res.data.list),
+          totalPages: res.data.pages
         });
       }
     });
   },
-  onLoad: function (options) {
+  onReachBottom() {
+    if (this.data.totalPages > this.data.page) {
+      this.setData({
+        page: this.data.page + 1
+      });
+      this.getIndexData();
+    } else {
+      wx.showToast({
+        title: '没有更多专题了',
+        icon: 'none',
+        duration: 2000
+      });
+      return false;
+    }
+  },
+  switchTab: function (event) {
+    let showType = event.currentTarget.dataset.index;
+    this.setData({
+      topics: [],
+      page: 1,
+      limit: 5,
+      totalPages: 1
+    });
     this.getIndexData();
+  },
+  onLoad: function (options) {
+    
   },
   onReady: function () {
     // 页面渲染完成
   },
   onShow: function () {
     // 页面显示
+    this.getIndexData();
   },
   onHide: function () {
     // 页面隐藏

@@ -1,5 +1,10 @@
+page {
+  height: 100%;
+  background: #fff;
+}
+
 .a-section {
-  width: 750rpx;
+  width: 715rpx;
   height: auto;
   overflow: hidden;
   background: #fff;
@@ -65,13 +70,13 @@
 
 .a-topic .b {
   height: 100%;
-  width: 750rpx;
+  width: 715rpx;
   padding: 0 0 48rpx 0;
 }
 
 .a-topic .b .list {
   height: 100%;
-  width: 750rpx;
+  width: 715rpx;
   white-space: nowrap;
 }
 

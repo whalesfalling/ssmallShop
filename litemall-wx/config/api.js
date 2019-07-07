@@ -1,8 +1,8 @@
 // 以下是业务服务器API地址
 // 本机开发时使用
-var WxApiRoot = 'http://localhost:8080/wx/';
+//var WxApiRoot = 'http://localhost:8080/wx/';
 // 云平台上线时使用
-//var WxApiRoot = 'https://www.menethil.com.cn/wx/';
+var WxApiRoot = 'https://www.whalesfall.cn/wx/';
 
 module.exports = {
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口
@@ -81,12 +81,6 @@ module.exports = {
   GroupOnMy: WxApiRoot + 'groupon/my', //团购API-我的团购
   GroupOnDetail: WxApiRoot + 'groupon/detail', //团购API-详情
   GroupOnJoin: WxApiRoot + 'groupon/join', //团购API-详情
-
-  CouponList: WxApiRoot + 'coupon/list', //优惠券列表
-  CouponMyList: WxApiRoot + 'coupon/mylist', //我的优惠券列表
-  CouponSelectList: WxApiRoot + 'coupon/selectlist', //当前订单可用优惠券列表
-  CouponReceive: WxApiRoot + 'coupon/receive', //优惠券领取
-  CouponExchange: WxApiRoot + 'coupon/exchange', //优惠券兑换
 
   StorageUpload: WxApiRoot + 'storage/upload', //图片上传,
 
