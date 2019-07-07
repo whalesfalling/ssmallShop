@@ -25,8 +25,8 @@ litemall:
     # 短信息用于通知客户，例如发货短信通知，注意配置格式；template-name，template-templateId 请参考 NotifyType 枚举值
     sms:
       enable: true
-      appid: wxdd8e98ed7ebabd31
-      appkey: e1e108c98d009c22047f4973fc35cde7
+      appid: 1400226921
+      appkey: 875790d4b137a3528a09a02d00990bf1
       template:
       - name: paySucceed
         templateId: 156349

@@ -23,32 +23,8 @@
       <el-form-item label="专题内容" prop="content">
         <editor :init="editorInit" v-model="topic.content"/>
       </el-form-item>
-      <el-form-item label="商品低价" prop="price">
-        <el-input v-model="topic.price"/>
-      </el-form-item>
       <el-form-item label="阅读量" prop="readCount">
         <el-input v-model="topic.readCount"/>
-      </el-form-item>
-      <el-form-item label="专题商品" prop="goods">
-        <el-button style="float:right;" size="mini" type="primary" @click="handleCreate()">创建商品</el-button>
-
-        <!-- 查询结果 -->
-        <el-table :data="goodsList" border fit highlight-current-row>
-
-          <el-table-column align="center" label="商品ID" prop="id"/>
-          <el-table-column align="center" property="picUrl" label="图片">
-            <template slot-scope="scope">
-              <img :src="scope.row.picUrl" width="60">
-            </template>
-          </el-table-column>
-          <el-table-column align="center" label="商品名称" prop="name"/>
-          <el-table-column align="center" label="商品介绍" prop="brief"/>
-          <el-table-column align="center" label="操作" class-name="small-padding fixed-width">
-            <template slot-scope="scope">
-              <el-button type="danger" size="mini" @click="handleDelete(scope.row)">删除</el-button>
-            </template>
-          </el-table-column>
-        </el-table>
       </el-form-item>
 
     </el-form>
@@ -56,30 +32,6 @@
       <el-button @click="handleCancel">取消</el-button>
       <el-button type="primary" @click="handleConfirm">确定</el-button>
     </div>
-
-    <el-dialog :visible.sync="addVisiable" title="添加商品">
-      <div class="search">
-        <el-input v-model="listQuery.goodsSn" clearable class="filter-item" style="width: 200px;" placeholder="请输入商品编号"/>
-        <el-input v-model="listQuery.name" clearable class="filter-item" style="width: 200px;" placeholder="请输入商品名称"/>
-        <el-button class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">查找</el-button>
-        <el-table v-loading="listLoading" :data="list" element-loading-text="正在查询中。。。" border fit highlight-current-row @selection-change="handleSelectionChange">
-          <el-table-column type="selection" width="55"/>
-          <el-table-column align="center" label="商品ID" prop="id"/>
-          <el-table-column align="center" property="picUrl" label="图片">
-            <template slot-scope="scope">
-              <img :src="scope.row.picUrl" width="40">
-            </template>
-          </el-table-column>
-          <el-table-column align="center" label="商品名称" prop="name"/>
-        </el-table>
-        <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getList" />
-
-      </div>
-      <div slot="footer" class="dialog-footer">
-        <el-button @click="addVisiable = false">取消</el-button>
-        <el-button type="primary" @click="confirmAdd">确定</el-button>
-      </div>
-    </el-dialog>
 
   </div>
 </template>
@@ -115,7 +67,6 @@
 
 <script>
 import { createTopic } from '@/api/topic'
-import { listGoods } from '@/api/goods'
 import { createStorage, uploadPath } from '@/api/storage'
 import BackToTop from '@/components/BackToTop'
 import Editor from '@tinymce/tinymce-vue'
@@ -130,9 +81,8 @@ export default {
       uploadPath,
       id: 0,
       topic: {
-        goods: []
+
       },
-      goodsList: [],
       addVisiable: false,
       list: [],
       total: 0,
@@ -155,9 +105,6 @@ export default {
         ],
         content: [
           { required: true, message: '专题内容不能为空', trigger: 'blur' }
-        ],
-        price: [
-          { required: true, message: '专题低价不能为空', trigger: 'blur' }
         ]
       },
       editorInit: {
@@ -195,79 +142,11 @@ export default {
   created() {
   },
   methods: {
-    getList() {
-      this.listLoading = true
-      listGoods(this.listQuery).then(response => {
-        this.list = response.data.data.list
-        this.total = response.data.data.total
-        this.listLoading = false
-      }).catch(() => {
-        this.list = []
-        this.total = 0
-        this.listLoading = false
-      })
-    },
-    handleFilter() {
-      this.listQuery.page = 1
-      this.getList()
+    handleCancel() {
+      this.$router.push({ path: '/promotion/topic' })
     },
     handleSelectionChange(val) {
       this.selectedlist = val
-    },
-    uploadPicUrl: function(response) {
-      this.topic.picUrl = response.data.url
-    },
-    handleCreate() {
-      this.listQuery = {
-        page: 1,
-        limit: 5,
-        id: undefined,
-        name: undefined,
-        sort: 'add_time',
-        order: 'desc'
-      }
-      this.list = []
-      this.total = 0
-      this.selectedlist = []
-      this.addVisiable = true
-    },
-    confirmAdd() {
-      const newGoodsIds = []
-      const newGoodsList = []
-      this.selectedlist.forEach(item => {
-        const id = item.id
-        let found = false
-        this.topic.goods.forEach(goodsId => {
-          if (id === goodsId) {
-            found = true
-          }
-        })
-        if (!found) {
-          newGoodsIds.push(id)
-          newGoodsList.push(item)
-        }
-      })
-
-      if (newGoodsIds.length > 0) {
-        this.topic.goods = this.topic.goods.concat(newGoodsIds)
-        this.goodsList = this.goodsList.concat(newGoodsList)
-      }
-      this.addVisiable = false
-    },
-    handleDelete(row) {
-      for (var index = 0; index < this.topic.goods.length; index++) {
-        if (row.id === this.topic.goods[index]) {
-          this.topic.goods.splice(index, 1)
-        }
-      }
-      for (var index2 = 0; index2 < this.goodsList.length; index2++) {
-        if (row.id === this.goodsList[index2].id) {
-          this.goodsList.splice(index2, 1)
-        }
-      }
-    },
-    handleCancel() {
-      this.$router.push({ path: '/promotion/topic' })
     },
     handleConfirm() {
       this.$refs['topic'].validate(valid => {
@@ -283,6 +162,9 @@ export default {
             })
         }
       })
+    },
+    uploadPicUrl: function(response) {
+      this.topic.picUrl = response.data.url
     }
   }
 }

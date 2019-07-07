@@ -31,8 +31,6 @@
         </template>
       </el-table-column>
 
-      <el-table-column align="center" label="底价" prop="price"/>
-
       <el-table-column align="center" label="阅读数量" prop="readCount"/>
 
       <el-table-column align="center" label="操作" min-width="100" class-name="small-padding fixed-width">
@@ -165,9 +163,7 @@ export default {
           '专题子标题',
           '专题内容',
           '专题图片',
-          '商品低价',
-          '阅读量',
-          '专题商品'
+          '阅读量'
         ]
         const filterVal = [
           'id',
@@ -175,9 +171,7 @@ export default {
           'subtitle',
           'content',
           'picUrl',
-          'price',
-          'readCount',
-          'goods'
+          'readCount'
         ]
         excel.export_json_to_excel2(tHeader, this.list, filterVal, '专题信息')
         this.downloadLoading = false

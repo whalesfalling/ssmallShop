@@ -95,7 +95,7 @@ export const asyncRouterMap = [
         name: 'user',
         meta: {
           perms: ['GET /admin/user/list'],
-          title: '客户列表',
+          title: '客户管理',
           noCache: true
         }
       },
@@ -106,6 +106,36 @@ export const asyncRouterMap = [
         meta: {
           perms: ['GET /admin/address/list'],
           title: '收货地址',
+          noCache: true
+        }
+      },
+      {
+        path: 'collect',
+        component: () => import('@/views/user/collect'),
+        name: 'collect',
+        meta: {
+          perms: ['GET /admin/collect/list'],
+          title: '用户收藏',
+          noCache: true
+        }
+      },
+      {
+        path: 'footprint',
+        component: () => import('@/views/user/footprint'),
+        name: 'footprint',
+        meta: {
+          perms: ['GET /admin/footprint/list'],
+          title: '用户足迹',
+          noCache: true
+        }
+      },
+      {
+        path: 'history',
+        component: () => import('@/views/user/history'),
+        name: 'history',
+        meta: {
+          perms: ['GET /admin/history/list'],
+          title: '搜索历史',
           noCache: true
         }
       },
@@ -251,6 +281,16 @@ export const asyncRouterMap = [
     },
     children: [
       {
+        path: 'ad',
+        component: () => import('@/views/promotion/ad'),
+        name: 'ad',
+        meta: {
+          perms: ['GET /admin/ad/list', 'POST /admin/ad/create', 'GET /admin/ad/read', 'POST /admin/ad/update', 'POST /admin/ad/delete'],
+          title: '广告管理',
+          noCache: true
+        }
+      },
+      {
         path: 'coupon',
         component: () => import('@/views/promotion/coupon'),
         name: 'coupon',
@@ -259,6 +299,38 @@ export const asyncRouterMap = [
           title: '积分管理',
           noCache: true
         }
+      },
+      {
+        path: 'topic',
+        component: () => import('@/views/promotion/topic'),
+        name: 'topic',
+        meta: {
+          perms: ['GET /admin/topic/list', 'POST /admin/topic/create', 'GET /admin/topic/read', 'POST /admin/topic/update', 'POST /admin/topic/delete'],
+          title: '专题管理',
+          noCache: true
+        }
+      },
+      {
+        path: 'topic-create',
+        component: () => import('@/views/promotion/topicCreate'),
+        name: 'topicCreate',
+        meta: {
+          perms: ['POST /admin/topic/create'],
+          title: '专题创建',
+          noCache: true
+        },
+        hidden: true
+      },
+      {
+        path: 'topic-edit',
+        component: () => import('@/views/promotion/topicEdit'),
+        name: 'topicEdit',
+        meta: {
+          perms: ['GET /admin/topic/read', 'POST /admin/topic/update'],
+          title: '专题编辑',
+          noCache: true
+        },
+        hidden: true
       },
       {
         path: 'groupon-rule',

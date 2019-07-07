@@ -911,7 +911,7 @@ sudo apt-get install mysql-client
     
     cd ..
     mvn clean package
-    cp -f ./litemall-all/target/litemall-all-*-exec.jar ./deploy/litemall/litemall.jar
+    cp -f ./litemall-all/targcd et/litemall-all-*-exec.jar ./deploy/litemall/litemall.jar
     ```
     
     这里脚本的作用是：

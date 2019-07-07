@@ -61,16 +61,8 @@ public class WxTopicController {
     @GetMapping("detail")
     public Object detail(@NotNull Integer id) {
         LitemallTopic topic = topicService.findById(id);
-        List<LitemallGoods> goods = new ArrayList<>();
-        for (Integer i : topic.getGoods()) {
-            LitemallGoods good = goodsService.findByIdVO(i);
-            if (null != good)
-                goods.add(good);
-        }
-
         Map<String, Object> entity = new HashMap<String, Object>();
         entity.put("topic", topic);
-        entity.put("goods", goods);
         return ResponseUtil.ok(entity);
     }
 

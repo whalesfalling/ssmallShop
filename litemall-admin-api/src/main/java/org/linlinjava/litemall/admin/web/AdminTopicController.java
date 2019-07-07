@@ -55,10 +55,6 @@ public class AdminTopicController {
         if (StringUtils.isEmpty(content)) {
             return ResponseUtil.badArgument();
         }
-        BigDecimal price = topic.getPrice();
-        if (price == null) {
-            return ResponseUtil.badArgument();
-        }
         return null;
     }
 
@@ -79,17 +75,8 @@ public class AdminTopicController {
     @GetMapping("/read")
     public Object read(@NotNull Integer id) {
         LitemallTopic topic = topicService.findById(id);
-        Integer[] goodsIds = topic.getGoods();
-        List<LitemallGoods> goodsList = null;
-        if(goodsIds == null || goodsIds.length == 0){
-            goodsList = new ArrayList<>();
-        }
-        else{
-            goodsList = goodsService.queryByIds(goodsIds);
-        }
         Map<String, Object> data = new HashMap<>(2);
         data.put("topic", topic);
-        data.put("goodsList", goodsList);
         return ResponseUtil.ok(data);
     }
 
