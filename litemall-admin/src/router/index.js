@@ -120,26 +120,6 @@ export const asyncRouterMap = [
         }
       },
       {
-        path: 'footprint',
-        component: () => import('@/views/user/footprint'),
-        name: 'footprint',
-        meta: {
-          perms: ['GET /admin/footprint/list'],
-          title: '用户足迹',
-          noCache: true
-        }
-      },
-      {
-        path: 'history',
-        component: () => import('@/views/user/history'),
-        name: 'history',
-        meta: {
-          perms: ['GET /admin/history/list'],
-          title: '搜索历史',
-          noCache: true
-        }
-      },
-      {
         path: 'feedback',
         component: () => import('@/views/user/feedback'),
         name: 'feedback',
@@ -163,15 +143,6 @@ export const asyncRouterMap = [
       icon: 'chart'
     },
     children: [
-      {
-        path: 'region',
-        component: () => import('@/views/mall/region'),
-        name: 'region',
-        meta: {
-          title: '行政区域',
-          noCache: true
-        }
-      },
       {
         path: 'brand',
         component: () => import('@/views/mall/brand'),
@@ -292,11 +263,11 @@ export const asyncRouterMap = [
       },
       {
         path: 'coupon',
-        component: () => import('@/views/promotion/coupon'),
+        component: () => import('@/views/promotion/creditsRule'),
         name: 'coupon',
         meta: {
-          perms: ['GET /admin/coupon/list', 'POST /admin/coupon/create', 'POST /admin/coupon/update', 'POST /admin/coupon/delete'],
-          title: '积分管理',
+          perms: ['POST /admin/creditsRule/getCreditsRule', 'POST /admin/creditsRule/updateCreditsRule'],
+          title: '积分规则',
           noCache: true
         }
       },

@@ -772,7 +772,7 @@ CREATE TABLE `pp_user_formid` (
 CREATE TABLE `pp_user_credits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL COMMENT '用户id',
-	 credits decimal(10,2) COMMENT'积分',
+  credits decimal(10,2) COMMENT'可用积分',
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`),
