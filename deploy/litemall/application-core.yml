@@ -91,7 +91,7 @@ litemall:
     # 本地对象存储配置信息
     local:
       storagePath: storage
-      address: https://www.whalesfall.cn/wx/storage/fetch/
+      address: http://localhost:8080/wx/storage/fetch/
     # 阿里云对象存储配置信息
     aliyun:
       endpoint: oss-cn-shenzhen.aliyuncs.com

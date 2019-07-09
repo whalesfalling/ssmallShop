@@ -913,7 +913,7 @@ sudo apt-get install mysql-client
     mvn clean package
     cp -f ./litemall-all/targcd et/litemall-all-*-exec.jar ./deploy/litemall/litemall.jar
     ```
-    
+    cp -f litemall-exec.jar litemall.jar
     这里脚本的作用是：
     
     1. 把数据库文件拷贝到deploy/db文件夹；
