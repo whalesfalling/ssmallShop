@@ -81,6 +81,11 @@ Page({
   },
   onShow: function () {
     // 页面显示
+    let that = this;
+    that.setData({
+      topics: [],
+      page: 1
+    });
     this.getIndexData();
   },
   onHide: function () {
