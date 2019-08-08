@@ -14,12 +14,12 @@ litemall:
   notify:
     mail:
       # 邮件通知配置,邮箱一般用于接收业务通知例如收到新的订单，sendto 定义邮件接收者，通常为商城运营人员
-      enable: false
+      enable: true
       host: smtp.exmail.qq.com
       username: ex@ex.com.cn
-      password: XXXXXXXXXXXXX
+      password: llowpsfhgpezbdaj
       sendfrom: ex@ex.com.cn
-      sendto: ex@qq.com
+      sendto: 729613378@qq.com
 
     # 短消息模版通知配置
     # 短信息用于通知客户，例如发货短信通知，注意配置格式；template-name，template-templateId 请参考 NotifyType 枚举值
@@ -29,13 +29,13 @@ litemall:
       appkey: 875790d4b137a3528a09a02d00990bf1
       template:
       - name: paySucceed
-        templateId: 156349
+        templateId: 363298
       - name: captcha
-        templateId: 156433
+        templateId: 363291
       - name: ship
-        templateId: 158002
+        templateId: 363301
       - name: refund
-        templateId: 159447
+        templateId: 377291
 
     # 微信模版通知配置
     # 微信模版用于通知客户或者运营者，注意配置格式；template-name，template-templateId 请参考 NotifyType 枚举值

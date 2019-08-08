@@ -352,7 +352,7 @@ flush privilege
 
    例如：
    ```
-   cd litemall/litemall-all
+   cd litemall/
    mvn spring-boot:run
    ```
    
@@ -394,11 +394,10 @@ flush privilege
 2. 安装依赖库
     
     ```
-    cd litemall/litemall-admin
+    cd litemall/    
     npm install -g cnpm --registry=https://registry.npm.taobao.org
     cnpm install
     ```
-    
 3. 编译并运行
     
     ```
@@ -907,7 +906,7 @@ sudo apt-get install mysql-client
     
     cd ./litemall-admin
     cnpm install
-    cnpm run build:dep
+    cnpm run build:prod
     
     cd ..
     mvn clean package

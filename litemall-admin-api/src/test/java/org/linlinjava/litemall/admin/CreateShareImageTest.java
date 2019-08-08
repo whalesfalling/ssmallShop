@@ -21,7 +21,7 @@ public class CreateShareImageTest {
 
     @Test
     public void test() {
-        LitemallGoods good = litemallGoodsService.findById(1181010);
+        LitemallGoods good = litemallGoodsService.findById(1006010);
         qCodeService.createGoodShareImage(good.getId().toString(), good.getPicUrl(), good.getName());
     }
 }

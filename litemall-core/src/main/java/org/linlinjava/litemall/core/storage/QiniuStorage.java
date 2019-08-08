@@ -8,7 +8,8 @@ import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,7 +17,7 @@ import java.nio.file.Path;
 import java.util.stream.Stream;
 
 public class QiniuStorage implements Storage {
-
+    private final Log logger = LogFactory.getLog(QiniuStorage.class);
     private String endpoint;
     private String accessKey;
     private String secretKey;
@@ -71,9 +72,9 @@ public class QiniuStorage implements Storage {
 
         try {
             String upToken = auth.uploadToken(bucketName);
-            Response response = uploadManager.put(inputStream, keyName, upToken, null, contentType);
+            uploadManager.put(inputStream, keyName, upToken, null, contentType);
         } catch (QiniuException ex) {
-            ex.printStackTrace();
+            logger.error(ex.getMessage(), ex);
         }
     }
 
@@ -94,13 +95,11 @@ public class QiniuStorage implements Storage {
             Resource resource = new UrlResource(url);
             if (resource.exists() || resource.isReadable()) {
                 return resource;
-            } else {
-                return null;
             }
         } catch (MalformedURLException e) {
-            e.printStackTrace();
-            return null;
+            logger.error(e.getMessage(), e);
         }
+        return null;
     }
 
     @Override
@@ -115,7 +114,7 @@ public class QiniuStorage implements Storage {
         try {
             bucketManager.delete(bucketName, keyName);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
     }
 

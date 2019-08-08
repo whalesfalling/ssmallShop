@@ -47,7 +47,7 @@ export default {
   name: 'Login',
   data() {
     const validateUsername = (rule, value, callback) => {
-      if (validateUsername == null) {
+      if (value === null || value === '') {
         callback(new Error('请输入正确的管理员用户名'))
       } else {
         callback()

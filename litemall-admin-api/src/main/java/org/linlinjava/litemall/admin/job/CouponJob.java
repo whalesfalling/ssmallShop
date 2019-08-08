@@ -35,7 +35,7 @@ public class CouponJob {
         logger.info("系统开启任务检查优惠券是否已经过期");
 
         List<LitemallCoupon> couponList = couponService.queryExpired();
-        for(LitemallCoupon coupon : couponList){
+        for (LitemallCoupon coupon : couponList) {
             coupon.setStatus(CouponConstant.STATUS_EXPIRED);
             couponService.updateById(coupon);
         }

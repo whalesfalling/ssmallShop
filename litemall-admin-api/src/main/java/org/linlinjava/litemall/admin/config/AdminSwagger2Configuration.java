@@ -20,22 +20,23 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class Swagger2Configuration {
+public class AdminSwagger2Configuration  {
     @Bean
-    public Docket createRestApi() {
+    public Docket adminDocket() {
 
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
+                .groupName("admin")
+                .apiInfo(adminApiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("org.linlinjava.litemall.admin.web"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
-    private ApiInfo apiInfo() {
+    private ApiInfo adminApiInfo() {
         return new ApiInfoBuilder()
-                .title("litemall-admin api")
-                .description("开源商城后台管理平台")
+                .title("litemall-admin API")
+                .description("litemall管理后台API")
                 .termsOfServiceUrl("https://github.com/linlinjava/litemall")
                 .contact("https://github.com/linlinjava/litemall")
                 .version("1.0")

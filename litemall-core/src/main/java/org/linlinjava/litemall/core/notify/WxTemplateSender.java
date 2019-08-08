@@ -68,7 +68,7 @@ public class WxTemplateSender {
                 logger.warn("更新数据已失效");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
     }
 

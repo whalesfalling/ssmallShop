@@ -6,6 +6,7 @@ var user = require('../../utils/user.js');
 
 Page({
   data: {
+    canShare: false,
     id: 0,
     goods: {},
     groupon: [], //该商品支持的团购规格
@@ -56,7 +57,7 @@ Page({
   },
   handleSetting: function(e) {
       var that = this;
-      // console.log(e)
+      console.log(e)
       if (!e.detail.authSetting['scope.writePhotosAlbum']) {
           wx.showModal({
               title: '警告',
@@ -78,10 +79,10 @@ Page({
   // 保存分享图
   saveShare: function() {
     let that = this;
+    console.log(that.data.shareImage);
     wx.downloadFile({
       url: that.data.shareImage,
       success: function(res) {
-        console.log(res)
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
           success: function(res) {
@@ -166,7 +167,8 @@ Page({
           userHasCollect: res.data.userHasCollect,
           shareImage: res.data.shareImage,
           checkedSpecPrice: res.data.info.retailPrice,
-          groupon: res.data.groupon
+          groupon: res.data.groupon,
+          canShare: res.data.share,
         });
 
         //如果是通过分享的团购参加团购，则团购项目应该与分享的一致并且不可更改

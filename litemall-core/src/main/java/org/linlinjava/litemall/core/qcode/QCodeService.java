@@ -9,7 +9,8 @@ import org.linlinjava.litemall.db.domain.LitemallStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -18,6 +19,8 @@ import java.net.URL;
 
 @Service
 public class QCodeService {
+    private final Log logger = LogFactory.getLog(QCodeService.class);
+
     @Autowired
     WxMaService wxMaService;
 
@@ -38,11 +41,11 @@ public class QCodeService {
 
             return storageInfo.getUrl();
         } catch (WxErrorException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
 
         return "";
@@ -72,11 +75,11 @@ public class QCodeService {
 
             return litemallStorage.getUrl();
         } catch (WxErrorException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
 
         return "";

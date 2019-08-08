@@ -37,7 +37,7 @@ public class SmsTest {
 
     @Test
     public void testCaptcha() {
-        String phone = "xxxxxxxxxxx";
+        String phone = "13524891379";
         String[] params = new String[]{"123456"};
 
         notifyService.notifySmsTemplate(phone, NotifyType.CAPTCHA, params);
@@ -45,7 +45,7 @@ public class SmsTest {
 
     @Test
     public void testPaySucceed() {
-        String phone = "xxxxxxxxxxx";
+        String phone = "13524891379";
         String[] params = new String[]{"123456"};
 
         notifyService.notifySmsTemplate(phone, NotifyType.PAY_SUCCEED, params);
@@ -53,7 +53,7 @@ public class SmsTest {
 
     @Test
     public void testShip() {
-        String phone = "xxxxxxxxxxx";
+        String phone = "13524891379";
         String[] params = new String[]{"123456"};
 
         notifyService.notifySmsTemplate(phone, NotifyType.SHIP, params);
@@ -61,7 +61,7 @@ public class SmsTest {
 
     @Test
     public void testRefund() {
-        String phone = "xxxxxxxxxxx";
+        String phone = "13524891379";
         String[] params = new String[]{"123456"};
 
         notifyService.notifySmsTemplate(phone, NotifyType.REFUND, params);

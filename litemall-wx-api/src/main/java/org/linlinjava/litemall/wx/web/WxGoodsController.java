@@ -10,6 +10,7 @@ import org.linlinjava.litemall.core.validator.Sort;
 import org.linlinjava.litemall.db.domain.*;
 import org.linlinjava.litemall.db.service.*;
 import org.linlinjava.litemall.wx.annotation.LoginUser;
+import org.linlinjava.litemall.core.system.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -185,6 +186,7 @@ public class WxGoodsController {
 			data.put("attribute", goodsAttributeListTask.get());
 			data.put("brand", brandCallableTask.get());
 			data.put("groupon", grouponRulesCallableTask.get());
+			data.put("share", SystemConfig.isAutoCreateShareImage());
 		}
 		catch (Exception e) {
 			e.printStackTrace();
