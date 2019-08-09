@@ -92,12 +92,15 @@ public class WxFootprintController {
             c.put("addTime", footprint.getAddTime());
 
             LitemallGoods goods = goodsService.findById(footprint.getGoodsId());
-            c.put("name", goods.getName());
-            c.put("brief", goods.getBrief());
-            c.put("picUrl", goods.getPicUrl());
-            c.put("retailPrice", goods.getRetailPrice());
-
-            footprintVoList.add(c);
+            if(goods != null){ // 产品未下架，已下架的产品不展示
+                c.put("name", goods.getName());
+                c.put("brief", goods.getBrief());
+                c.put("picUrl", goods.getPicUrl());
+                c.put("retailPrice", goods.getRetailPrice());
+                footprintVoList.add(c);
+            }else{
+                c.clear();
+            }
         }
 
         return ResponseUtil.okList(footprintVoList, footprintList);

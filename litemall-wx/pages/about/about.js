@@ -25,11 +25,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.showAbout();
   },
-
-  showLocation: function (e) {
-    var that = this
+  showAbout: function() {
+    var that = this;
+    util.request(api.LocalAbout).then(function(res){
+      if (res.errno === 0){
+         that.setData({
+           shopInfo: {
+             name: res.data.litemall_mall_name,
+             address: res.data.litemall_mall_address,
+             linkPhone: res.data.litemall_mall_phone,
+             qqNumber: res.data.litemall_mall_qq,
+           }
+         });
+      }  
+    });
+  },
+  showLoading:function (e) {
+    var that = this;
     wx.openLocation({
       latitude: that.data.shopInfo.latitude,
       longitude: that.data.shopInfo.longitude,
@@ -44,6 +58,6 @@ Page({
     })
   },
   reLoad: function (e) {
-    this.loadShopInfo();
+    this.showAbout();
   }
 })
