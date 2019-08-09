@@ -46,6 +46,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll
     }
   },
+  performance: {
+    hints: "warning", // 枚举
+    maxAssetSize: 30000000, // 整数类型（以字节为单位）
+    maxEntrypointSize: 50000000, // 整数类型（以字节为单位）
+    assetFilter: function(assetFilename) {
+      // 提供资源文件名的断言函数
+      return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
+    }
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')

@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b4ce5e8-298f-4493-afaa-7b25b41ee64f" name="Default Changelist" comment="微信小程序社区功能更新">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_qiniu_qiniu_java_sdk_7_2_23.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-admin/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-admin/build/webpack.base.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-admin/build/webpack.dev.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-admin/build/webpack.dev.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-admin/build/webpack.prod.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-admin/build/webpack.prod.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-wx-api/src/main/java/org/linlinjava/litemall/wx/service/WxGrouponRuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-wx-api/src/main/java/org/linlinjava/litemall/wx/service/WxGrouponRuleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-wx/pages/category/category.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-wx/pages/category/category.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-wx/pages/donate/donate.js" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-wx/pages/donate/donate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-wx/pages/goods/goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-wx/pages/goods/goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-wx/pages/goods/goods.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-wx/pages/goods/goods.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-wx/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-wx/pages/index/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litemall-wx/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/litemall-wx/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log.log" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/litemall-admin-api/target/" />
     <ignored path="$PROJECT_DIR$/litemall-all/target/" />
@@ -31,97 +44,48 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="17385">
-                <caret line="915" column="3" selection-start-line="915" selection-start-column="3" selection-end-line="915" selection-end-column="40" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/litemall-admin-api/src/main/resources/application-admin.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/litemall-admin-api/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/litemall-all/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/litemall-all/src/main/java/org/linlinjava/litemall/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/litemall-core/src/main/resources/application-core.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="101" column="16" lean-forward="true" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/litemall-core/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deploy/litemall/application.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deploy/litemall/application-admin.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deploy/litemall/application-core.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>118.24.0.153</find>
-      <find>148.70</find>
-      <find>selectByExampleWithBLOBs</find>
-      <find>price</find>
-      <find>handleCreate</find>
-      <find>goodsList</find>
-      <find>handleDelete</find>
-      <find>confirmAdd</find>
-      <find>goods</find>
-      <find>getList</find>
-      <find>handleFilter</find>
-      <find>handleCancel</find>
-      <find>handleConfirm</find>
+      <find>insertSelective</find>
+      <find>data.put(&quot;groupon&quot;, grouponRulesCallableTask.get());</find>
+      <find>groupon: res.data.groupon</find>
+      <find>class=&quot;goods_name_right&quot;</find>
+      <find>:on-success=&quot;uploadUrl&quot;</find>
+      <find>validateUsername</find>
+      <find>shirFilter</find>
+      <find>reset</find>
+      <find>401</find>
+      <find>maven-checkstyle-plugin</find>
+      <find>mybatis-generator-plugin</find>
+      <find>read</find>
+      <find>setLastLoginTime</find>
+      <find>testGensalt</find>
+      <find>sessionManager</find>
+      <find>unauthenticatedHandler</find>
+      <find>checkOrderUnpaid</find>
+      <find>StringBuffer</find>
+      <find>toApi</find>
+      <find>zrender</find>
+      <find>http://www.whalesfall.cn/</find>
+      <find>www.whalesfall.cn</find>
+      <find>http://www.whalesfall.cn</find>
+      <find>vueLoaderConfig</find>
+      <find>vue-loader.conf</find>
+      <find>chunk-159e.b8ca8249.css</find>
+      <find>assetsPublicPath</find>
+      <find>config.build.assetsPublicPath</find>
+      <find>159e</find>
+      <find>chunk-159e</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,26 +95,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/litemall-db/sql/litemall_schema.sql" />
-        <option value="$PROJECT_DIR$/deploy/bin/reset.sh" />
-        <option value="$PROJECT_DIR$/litemall-db/src/main/resources/application-db.yml" />
-        <option value="$PROJECT_DIR$/deploy/util/lazy.sh" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/litemall-admin/config/prod.env.js" />
-        <option value="$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-626b.dbc2e30c.js" />
-        <option value="$PROJECT_DIR$/litemall-admin/config/dep.env.js" />
-        <option value="$PROJECT_DIR$/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallTopic.java" />
-        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminTopicController.java" />
-        <option value="$PROJECT_DIR$/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallTopicService.java" />
-        <option value="$PROJECT_DIR$/litemall-wx-api/src/main/java/org/linlinjava/litemall/wx/web/WxTopicController.java" />
         <option value="$PROJECT_DIR$/litemall-admin/src/views/promotion/topic.vue" />
         <option value="$PROJECT_DIR$/litemall-admin/src/router/index.js" />
         <option value="$PROJECT_DIR$/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallTopicMapper.xml" />
         <option value="$PROJECT_DIR$/litemall-admin/src/views/promotion/topicEdit.vue" />
         <option value="$PROJECT_DIR$/litemall-admin/src/views/promotion/topicCreate.vue" />
         <option value="$PROJECT_DIR$/deploy/litemall/application-core.yml" />
-        <option value="$PROJECT_DIR$/project.md" />
         <option value="$PROJECT_DIR$/litemall-core/src/main/resources/application-core.yml" />
+        <option value="$PROJECT_DIR$/litemall-core/src/test/java/org/linlinjava/litemall/core/SmsTest.java" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/test/java/org/linlinjava/litemall/admin/CreateShareImageTest.java" />
+        <option value="$PROJECT_DIR$/litemall-wx-api/src/main/java/org/linlinjava/litemall/wx/web/WxGoodsController.java" />
+        <option value="$PROJECT_DIR$/litemall-wx/pages/goods/goods.js" />
+        <option value="$PROJECT_DIR$/litemall-wx/pages/goods/goods.wxml" />
+        <option value="$PROJECT_DIR$/litemall-all/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/litemall-all/src/main/resources/logback-spring.xml" />
+        <option value="$PROJECT_DIR$/litemall-wx-api/src/main/java/org/linlinjava/litemall/wx/web/WxAuthController.java" />
+        <option value="$PROJECT_DIR$/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/StatMapper.xml" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/config/ShiroConfig.java" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/config/ShiroExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/job/CouponJob.java" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/job/OrderJob.java" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/service/AdminGoodsService.java" />
+        <option value="$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/config/GlobalExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/express/ExpressService.java" />
+        <option value="$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/notify/TencentSmsSender.java" />
+        <option value="$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/notify/WxTemplateSender.java" />
+        <option value="$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/qcode/QCodeService.java" />
+        <option value="$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/AliyunStorage.java" />
+        <option value="$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/LocalStorage.java" />
+        <option value="$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/QiniuStorage.java" />
+        <option value="$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/TencentStorage.java" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/checkstyle.xml" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/service/LogHelper.java" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminAuthController.java" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/config/Swagger2Configuration.java" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/config/AdminSwagger2Configuration.java" />
+        <option value="$PROJECT_DIR$/litemall-wx-api/pom.xml" />
+        <option value="$PROJECT_DIR$/litemall-wx-api/src/main/java/org/linlinjava/litemall/wx/config/WxSwagger2Configuration.java" />
+        <option value="$PROJECT_DIR$/litemall-all/.gitignore" />
+        <option value="$PROJECT_DIR$/litemall-admin-api/pom.xml" />
+        <option value="$PROJECT_DIR$/litemall-all/src/main/java/org/linlinjava/litemall/Application.java" />
+        <option value="$PROJECT_DIR$/litemall-admin/src/views/login/index.vue" />
+        <option value="$PROJECT_DIR$/litemall-admin/src/views/promotion/ad.vue" />
+        <option value="$PROJECT_DIR$/litemall-wx-api/src/main/java/org/linlinjava/litemall/wx/service/WxGrouponRuleService.java" />
+        <option value="$PROJECT_DIR$/project.md" />
+        <option value="$PROJECT_DIR$/litemall-admin/src/main.js" />
+        <option value="$PROJECT_DIR$/litemall-admin/package.json" />
+        <option value="$PROJECT_DIR$/litemall-admin/index.html" />
+        <option value="$PROJECT_DIR$/litemall-admin/build/webpack.base.conf.js" />
+        <option value="$PROJECT_DIR$/litemall-admin/build/webpack.dev.conf.js" />
+        <option value="$PROJECT_DIR$/litemall-admin/build/webpack.prod.conf.js" />
+        <option value="$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-159e.b8ca8249.css" />
       </list>
     </option>
   </component>
@@ -166,11 +161,37 @@
           <item name="litemall" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="litemall-admin-api" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="litemall-admin-api" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="litemall-all" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="litemall-all" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="litemall-core" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="litemall-db" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="545" />
     <option name="y" value="205" />
     <option name="width" value="1370" />
@@ -182,6 +203,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,62 +220,122 @@
             <path>
               <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
               <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="deploy" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
               <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
               <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
               <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
               <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-admin-api" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="401_images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="custom-theme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="directive" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="router" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
               <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
               <item name="litemall-admin-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-admin-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-admin-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-admin-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-admin-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
@@ -263,22 +346,7 @@
               <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
               <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
               <item name="litemall-all" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-all" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-all" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
@@ -288,30 +356,17 @@
             <path>
               <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
               <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-db" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
               <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="litemall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="litemall-master" type="462c0819:PsiDirectoryNode" />
-              <item name="litemall-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="litemall-wx" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,7 +376,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562673168069" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565334902284" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -330,6 +385,12 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Download\litemall-master\litemall-admin-api" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.linlinjava.litemall.wx.config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Download\litemall-master" />
     </key>
@@ -352,6 +413,84 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.Application (1)">
+    <configuration name="CreateShareImageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="litemall-admin-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.linlinjava.litemall.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.linlinjava.litemall.admin" />
+      <option name="MAIN_CLASS_NAME" value="org.linlinjava.litemall.admin.CreateShareImageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateShareImageTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="litemall-admin-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.linlinjava.litemall.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.linlinjava.litemall.admin" />
+      <option name="MAIN_CLASS_NAME" value="org.linlinjava.litemall.admin.CreateShareImageTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailTest.testMail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="litemall-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.linlinjava.litemall.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.linlinjava.litemall.core" />
+      <option name="MAIN_CLASS_NAME" value="org.linlinjava.litemall.core.MailTest" />
+      <option name="METHOD_NAME" value="testMail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QiniuStorageTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="litemall-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.linlinjava.litemall.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.linlinjava.litemall.core" />
+      <option name="MAIN_CLASS_NAME" value="org.linlinjava.litemall.core.QiniuStorageTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="litemall-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.linlinjava.litemall.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.linlinjava.litemall.core" />
+      <option name="MAIN_CLASS_NAME" value="org.linlinjava.litemall.core.SmsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="litemall-all" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.linlinjava.litemall.Application" />
@@ -387,6 +526,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CreateShareImageTest.test" />
+        <item itemvalue="JUnit.CreateShareImageTest" />
+        <item itemvalue="JUnit.MailTest.testMail" />
+        <item itemvalue="JUnit.QiniuStorageTest.test" />
+        <item itemvalue="JUnit.SmsTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -407,6 +555,13 @@
       <workItem from="1562051535484" duration="7354000" />
       <workItem from="1562388332070" duration="14041000" />
       <workItem from="1562672687326" duration="674000" />
+      <workItem from="1562924545066" duration="73000" />
+      <workItem from="1563006826099" duration="1992000" />
+      <workItem from="1563502747530" duration="14162000" />
+      <workItem from="1565249021229" duration="9938000" />
+      <workItem from="1565264608856" duration="5857000" />
+      <workItem from="1565318432575" duration="1226000" />
+      <workItem from="1565320135784" duration="9519000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Directory">
       <created>1561477393921</created>
@@ -474,8 +629,40 @@
     <option name="localTasksCounter" value="10" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="MailTest_testMail - 2019.07.19 at 17h 14m 00s.xml">
+      <configuration name="MailTest.testMail" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest - 2019.07.19 at 17h 16m 32s.xml">
+      <configuration name="MailTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SmsTest - 2019.07.19 at 17h 27m 45s.xml">
+      <configuration name="SmsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QiniuStorageTest_test - 2019.07.19 at 17h 29m 54s.xml">
+      <configuration name="QiniuStorageTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest_testMail - 2019.07.19 at 17h 50m 01s.xml">
+      <configuration name="MailTest.testMail" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest_testMail - 2019.07.19 at 17h 58m 57s.xml">
+      <configuration name="MailTest.testMail" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CreateShareImageTest - 2019.07.19 at 18h 38m 06s.xml">
+      <configuration name="CreateShareImageTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CreateShareImageTest_test - 2019.07.19 at 18h 39m 54s.xml">
+      <configuration name="CreateShareImageTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CreateShareImageTest_test - 2019.07.19 at 18h 46m 45s.xml">
+      <configuration name="CreateShareImageTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CreateShareImageTest_test - 2019.08.08 at 15h 27m 11s.xml">
+      <configuration name="CreateShareImageTest.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63863000" />
+    <option name="totallyTimeSpent" value="106630000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -487,9 +674,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2774799" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30093834" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -504,18 +691,18 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932975" weight="0.3282123" />
-      <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49932975" weight="0.3282123" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4966488" weight="0.3282123" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49865952" weight="0.3282123" />
+      <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49865952" weight="0.3282123" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49597856" visible="true" weight="0.32681563" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50469166" side_tool="true" visible="true" weight="0.32960895" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49865952" weight="0.3282123" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013405" side_tool="true" weight="0.3282123" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49798927" weight="0.3282123" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="13" sideWeight="0.4953083" visible="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49396783" weight="0.3282123" />
       <window_info anchor="bottom" id="JRebel Executor" order="14" />
       <window_info anchor="bottom" id="JRebel Console" order="15" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.49865952" weight="0.3282123" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" sideWeight="0.49597856" weight="0.3282123" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" sideWeight="0.4953083" weight="0.3282123" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -595,316 +782,233 @@
     <MESSAGE value="微信小程序社区功能更新" />
     <option name="LAST_COMMIT_MESSAGE" value="微信小程序社区功能更新" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/litemall-core/src/main/java/org/linlinjava/litemall/core/system/SystemConfig.java</url>
+          <line>16</line>
+          <properties field="LITEMALL_WX_INDEX_CATLOG_GOODS" class="org.linlinjava.litemall.core.system.SystemConfig" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/service/AdminGoodsService.java</url>
+          <line>220</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/GoodsProductMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallAddressMapper.xml">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/src/styles/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="109" column="46" lean-forward="true" selection-start-line="109" selection-start-column="46" selection-end-line="109" selection-end-column="46" />
-        </state>
+        <state relative-caret-position="-3192" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-core/src/test/resources/litemall.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-core/src/test/java/org/linlinjava/litemall/core/util/bcrypt/BCryptTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-core/src/test/java/org/linlinjava/litemall/core/SmsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/build/vue-loader.conf.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/litemall-admin/build/webpack.base.conf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912" />
+        <state relative-caret-position="180">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/litemall/application-wx.yml">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/build/webpack.dev.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/img/401.089007e.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/img/404.a57b6f3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2015" selection-start-column="2005" selection-end-column="2015" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-159e.c043b741.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="71" selection-start-column="71" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-285a.a4024cea.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/litemall/application-db.yml">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-626b.f8e2c047.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-4560.b4da0e8f.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-6623.4fda9e43.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-afc6.2385c548.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/litemall-admin/build/build.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-957" />
+        <state relative-caret-position="-418">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/build/check-versions.js">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/build/webpack.prod.conf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-900" />
+        <state relative-caret-position="-2204">
+          <caret line="52" column="7" lean-forward="true" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/build/utils.js">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-45dd.1f7bf4d1.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/config/dep.env.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/config/dev.env.js">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-29e3.b84be1e2.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/config/prod.env.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/config/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1261">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wxmall.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-6441">
-            <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-1471">
-            <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1824" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-wx-api/src/main/java/org/linlinjava/litemall/wx/web/WxTopicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-1767">
-            <caret line="12" selection-start-line="12" selection-end-line="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CONTRIBUTE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-1370" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platform.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-11590">
-            <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/mybatis/mybatis-spring/1.3.2/mybatis-spring-1.3.2.jar!/org/mybatis/spring/MyBatisExceptionTranslator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/reflection/wrapper/BeanWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-db/src/main/java/org/linlinjava/litemall/db/dao/LitemallTopicMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="86" column="48" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminTopicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallTopic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4769">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/bin/deploy.sh">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-16c2.c83713cb.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/bin/reset.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-db/sql/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-64" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-db/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-8c73.34365730.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-db/src/main/resources/application-db.yml">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-4a9a.fcbec4db.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-1e22.208df83f.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/app.52d03946.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state>
+          <caret column="72" lean-forward="true" selection-start-column="72" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallTopicService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="81" column="51" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="51" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-commons.fc62e8ee.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallTopicMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="149" column="10" selection-start-line="149" selection-start-column="10" selection-end-line="149" selection-end-column="10" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-dd33.fb02a952.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/src/views/promotion/topic.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="173" column="21" lean-forward="true" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="21" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-df87.3eaa5817.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/src/router/index.js">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-e24b.c65134e6.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-f341.1378ceef.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-45dd.f8afe625.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-49fc.4a86f6b7.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/app.e631ecc4.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/7zzA.4b8ac939.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-2c37.2e1a0ee1.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-2c39.94b782f7.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-626b.25d8832c.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/VYnJ.d76bd13a.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/JEtC.6082c658.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/H9mH.5ec01898.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-f341.264ba58d.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-libs.8d9c7025.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-eefe.d6b69c93.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-e289.9465c47d.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-e27f.8f907c7d.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-e24b.8374e807.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-e2ae.c890ab91.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-afc6.1be3b07c.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-8066.71e47d0c.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/js/chunk-6623.1205cd1f.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-49fc.a96a74ba.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-libs.c5f65d55.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="343" column="8" lean-forward="true" selection-start-line="343" selection-start-column="8" selection-end-line="343" selection-end-column="8" />
+        <state>
+          <caret selection-end-column="76" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#3144#11391#1" expanded="true" />
+            <element signature="e#176463#176602#2" expanded="true" />
+            <element signature="e#178876#179015#2" expanded="true" />
+            <element signature="e#182371#182510#2" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/src/views/promotion/topicEdit.vue">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/dist/static/css/chunk-159e.b8ca8249.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="67" column="52" lean-forward="true" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+        <state>
+          <caret column="76" selection-start-column="76" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin/src/views/promotion/topicCreate.vue">
+    <entry file="file://$PROJECT_DIR$/litemall-admin/src/permission.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="109" column="19" lean-forward="true" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="17385">
-            <caret line="915" column="3" selection-start-line="915" selection-start-column="3" selection-end-line="915" selection-end-column="40" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin-api/src/main/resources/application-admin.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-admin-api/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-all/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-all/src/main/java/org/linlinjava/litemall/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-core/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/litemall/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/litemall/application-admin.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy/litemall/application-core.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/litemall-core/src/main/resources/application-core.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="101" column="16" lean-forward="true" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="16" />
+        <state>
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

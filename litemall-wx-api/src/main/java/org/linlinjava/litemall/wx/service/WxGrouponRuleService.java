@@ -1,8 +1,6 @@
 package org.linlinjava.litemall.wx.service;
 
 import com.github.pagehelper.Page;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.linlinjava.litemall.db.domain.LitemallGoods;
 import org.linlinjava.litemall.db.domain.LitemallGrouponRules;
 import org.linlinjava.litemall.db.service.LitemallGoodsService;
@@ -16,7 +14,6 @@ import java.util.List;
 
 @Service
 public class WxGrouponRuleService {
-    private final Log logger = LogFactory.getLog(WxGrouponRuleService.class);
 
     @Autowired
     private LitemallGrouponRulesService grouponRulesService;
