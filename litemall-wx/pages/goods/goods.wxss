@@ -59,7 +59,7 @@
 
 .goods-info {
   width: 750rpx;
-  height: 306rpx;
+  height: 245rpx;
   overflow: hidden;
   background: #fff;
 }
@@ -69,7 +69,7 @@
   width: 718.75rpx;
   height: 100%;
   margin-left: 31.25rpx;
-  padding: 38rpx 31.25rpx 38rpx 0;
+  padding: 0rpx 31.25rpx 38rpx 0;
   border-bottom: 1px solid #f4f4f4;
 }
 
@@ -81,9 +81,10 @@
 
 .goods_name {
   /* border: 1px solid black; */
+  background:#fff;
   height: 86rpx;
   line-height: 86rpx;
-  border-bottom: 1px solid #fafafa;
+  border-bottom: 1px solid #fff;
 }
 
 .goods_name_left {
@@ -93,7 +94,7 @@
   font-weight: 550;
   line-height: 86rpx;
   margin-left: 35rpx;
-  font-size: 38rpx;
+  font-size: 32rpx;
   letter-spacing: 1rpx;
 }
 
@@ -133,17 +134,19 @@
 }
 
 .goods-info .counterPrice {
-  float: left;
-  padding-left: 0rpx;
+  padding-left: 5%;
   text-decoration: line-through;
   font-size: 30rpx;
+  padding-top:11rpx;
   color: #999;
 }
 
 .goods-info .retailPrice {
-  padding-left: 5%;
-  font-size: 30rpx;
-  color: #FF3000;
+  padding-top: 2rpx;
+  float: left;
+  padding-left: 0rpx;
+  font-size: 40rpx;
+  color: #b4282d;
 }
 
 .goods-info .brand {
@@ -383,7 +386,7 @@
 
 .goods-attr .right {
   float: left;
-  font-size: 36.5rpx;
+  font-size: 30rpx;
   margin-left: 20rpx;
   width: 480rpx;
   height: 45rpx;
@@ -550,7 +553,7 @@
 .related-goods .item .name {
   display: block;
   width: 311.45rpx;
-  height: 35rpx;
+  height: 36rpx;
   margin: 11.5rpx 0 15rpx 0;
   text-align: center;
   overflow: hidden;

@@ -35,8 +35,8 @@
     <view class="c">
       <text class="desc">{{goods.brief}}</text>
       <view class="price">
-        <view class="counterPrice">原价：￥{{goods.counterPrice}}</view>
-        <view class="retailPrice">现价：￥{{checkedSpecPrice}}</view>
+        <view class="retailPrice">￥{{checkedSpecPrice}}</view>
+        <view class="counterPrice">￥{{goods.counterPrice}}</view>
       </view>
 
       <view class="brand" wx:if="{{brand.name}}">

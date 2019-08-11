@@ -9,7 +9,7 @@
             <view class="header">
               <text class="name">{{item.name}}</text>
               <view class="capsule-tag">
-                  <zan-capsule color="#a78845" leftText="{{item.grouponMember}}人成团" rightText="立减{{item.grouponDiscount}}" />
+                  <zan-capsule color="#FF3000" leftText="{{item.grouponMember}}人成团" rightText="立减{{item.grouponDiscount}}" />
               </view>
             </view>
             <text class="desc">{{item.brief}}</text>
