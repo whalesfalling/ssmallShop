@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class CreditsRuleService {
@@ -31,8 +32,6 @@ public class CreditsRuleService {
             ppCreditsRule.setUpdateTime(LocalDateTime.now());
             return ppCreditsRuleMapper.insertSelective(ppCreditsRule);
         }
-
     }
-
 
 }
