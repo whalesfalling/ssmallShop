@@ -1,6 +1,6 @@
 page {
   height: 100%;
-  background: #fff;
+  background: #efefef;
 }
 
 .a-section {
@@ -10,6 +10,7 @@ page {
   background: #fff;
   color: #333;
   margin-top: 20rpx;
+  margin-left: 20rpx;
 }
 
 .a-brand .b {
@@ -71,29 +72,27 @@ page {
 .a-topic .b {
   height: 100%;
   width: 715rpx;
-  padding: 0 0 48rpx 0;
 }
 
 .a-topic .b .list {
-  height: 100%;
+  height: 456rpx;
   width: 715rpx;
+  position: relative;  
   white-space: nowrap;
 }
 
 .a-topic .b .item {
-  height: 533rpx;
-  width: 695.5rpx;
-  margin-left: 36rpx;
+  height: 446rpx;
+  width: 715rpx;
+  position: absolute;
   overflow: hidden;
-}
-
-.a-topic .b .item:last-child {
-  margin-right: 30rpx;
+  text-align: center;
+  margin-top: 10rpx;
 }
 
 .a-topic .b .img {
-  height: 387.5rpx;
-  width: 680.5rpx;
+  height: 300rpx;
+  width: 695.5rpx;
   margin-bottom: 30rpx;
 }
 
@@ -102,17 +101,20 @@ page {
   margin-bottom: 13.5rpx;
   color: #333;
   font-size: 30rpx;
+  text-align: left;
 }
 
 .a-topic .b .np .price {
   margin-left: 20.8rpx;
-  color: #ab956d;
+  color: #b4282d;
 }
 
 .a-topic .b .desc {
+  text-align: left;
   display: block;
   height: 30rpx;
   color: #999;
+  margin-left: 20.8rpx;
   font-size: 24rpx;
   white-space: nowrap;
   overflow: hidden;

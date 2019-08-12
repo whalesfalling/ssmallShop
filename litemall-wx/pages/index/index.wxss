@@ -63,6 +63,7 @@
   height: 36rpx;
   font-size: 33rpx;
   line-height: 36rpx;
+  color: #b4282d;
 }
 
 .a-brand .b {

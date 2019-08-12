@@ -67,7 +67,6 @@
 .goods-info .c {
   display: block;
   width: 718.75rpx;
-  height: 100%;
   margin-left: 31.25rpx;
   padding: 0rpx 31.25rpx 38rpx 0;
   border-bottom: 1px solid #f4f4f4;
@@ -82,9 +81,6 @@
 .goods_name {
   /* border: 1px solid black; */
   background:#fff;
-  height: 86rpx;
-  line-height: 86rpx;
-  border-bottom: 1px solid #fff;
 }
 
 .goods_name_left {
@@ -96,28 +92,40 @@
   margin-left: 35rpx;
   font-size: 32rpx;
   letter-spacing: 1rpx;
+  margin-top: 18rpx;
+}
+
+.share_image {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.goods_name_center {
+  position: absolute;
+  right: 150rpx;
+  background: #efefef;
+  margin-top: 28rpx; 
+  height: 86rpx;
+  width: 3rpx;
+}
+.share_text {
+  font-size: 25rpx;
+  color: #000000;
+  height: 50rpx;
+  line-height:50rpx;
+  width: 60rpx;
+  position: absolute;
+  margin-top:-33rpx;
+  margin-left: -4rpx;
 }
 
 .goods_name_right {
   float: right;
   font-weight: 550;
-  margin-top: 28rpx;
-  width: 140rpx;
-  height: 80rpx;
-  line-height: 82rpx;
-  padding: 0;
-  margin: 0;
-  margin-right: 0rpx;
-  text-align: center;
-  font-size: 25rpx;
-  color: #f4f4f4;
-  border-top-left-radius: 50rpx;
-  border-bottom-left-radius: 50rpx;
-  border-top-right-radius: 0rpx;
-  border-bottom-right-radius: 0rpx;
-  letter-spacing: 3rpx;
-  /* background-image: linear-gradient(to right, #ff7701 100%); */
-  background-image: linear-gradient(to right, #9a9ba1 0%, #9a9ba1 100%);
+  margin-top: 28rpx; 
+  width: 100rpx;
+  line-height: 86rpx;
+  height: 86rpx;
 }
 
 .goods-info .desc {

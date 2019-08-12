@@ -89,7 +89,7 @@ page, .container {
 .groupon-list .retailPrice {
   margin-left: 30rpx;
   font-size: 28rpx;
-  color: #FF3000;
+  color: #b4282d;
 }
 
 .page {
