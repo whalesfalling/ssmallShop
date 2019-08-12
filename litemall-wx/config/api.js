@@ -82,6 +82,8 @@ module.exports = {
   GroupOnDetail: WxApiRoot + 'groupon/detail', //团购API-详情
   GroupOnJoin: WxApiRoot + 'groupon/join', //团购API-详情
 
+  CreditsAdd: WxApiRoot + "credits/addCredits",//获得积分
+
   StorageUpload: WxApiRoot + 'storage/upload', //图片上传,
 
   UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息

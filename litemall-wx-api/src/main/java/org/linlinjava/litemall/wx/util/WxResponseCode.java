@@ -34,4 +34,6 @@ public class WxResponseCode {
     public static final int COUPON_CODE_INVALID= 742;
 
 
+    public static final int CREDITS_UP=750;
+
 }

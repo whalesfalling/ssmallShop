@@ -40,7 +40,7 @@ Page({
     let that = this;
     return {
       title: that.data.goods.name,
-      desc: '唯爱与美食不可辜负',
+      desc: '',
       path: '/pages/index/index?goodId=' + this.data.id
     }
   },
@@ -51,6 +51,7 @@ Page({
       this.setData({
         openShare: !this.data.openShare
       });
+      
     } else {
       return false;
     }
@@ -75,39 +76,6 @@ Page({
               canWrite: true
           })
       }
-  },
-  // 保存分享图
-  saveShare: function() {
-    let that = this;
-    console.log(that.data.shareImage);
-    wx.downloadFile({
-      url: that.data.shareImage,
-      success: function(res) {
-        wx.saveImageToPhotosAlbum({
-          filePath: res.tempFilePath,
-          success: function(res) {
-            wx.showModal({
-              title: '存图成功',
-              content: '图片成功保存到相册了，可以分享到朋友圈了',
-              showCancel: false,
-              confirmText: '好的',
-              confirmColor: '#a78845',
-              success: function(res) {
-                if (res.confirm) {
-                  console.log('用户点击确定');
-                }
-              }
-            })
-          },
-          fail: function(res) {
-            console.log('fail')
-          }
-        })
-      },
-      fail: function() {
-        console.log('fail')
-      }
-    })
   },
 
   //从分享的团购进入
@@ -672,6 +640,14 @@ Page({
     this.setData({
       openShare: false,
     });
+    util.request(api.CreditsAdd).then(function (res) {
+      wx.showModal({
+        title: '恭喜',
+        content: '获得10积分',
+        showCancel: false
+      })
+    });
+    
   },
   openCartPage: function() {
     wx.switchTab({
