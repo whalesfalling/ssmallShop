@@ -3,27 +3,6 @@
     <import src="../../lib/wxParse/wxParse.wxml" />
     <template is="wxParse" data="{{wxParseData:topicDetail.nodes}}" />
   </scroll-view>
-  <scroll-view class="sv-goods" wx:if="{{topicGoods.length > 0 }}">
-    <view class="topic-goods">
-      <view class="h">
-        <text class="t">专题商品</text>
-      </view>
-      <view class="b">
-        <view class="item" wx:for="{{topicGoods}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-          <navigator url="/pages/goods/goods?id={{item.id}}">
-            <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
-            <view class="right">
-              <view class="text">
-                <text class="name">{{item.name}}</text>
-                <text class="desc">{{item.brief}}</text>
-                <text class="price">￥{{item.retailPrice}}</text>
-              </view>
-            </view>
-          </navigator>
-        </view>
-      </view>
-    </view>
-  </scroll-view>
   <scroll-view class="comments">
     <view class="h">
       <text class="t">精选留言</text>
@@ -34,7 +13,7 @@
         <view class="item" wx:for="{{commentList}}" wx:key="id">
           <view class="info">
             <view class="user">
-              <image class="avatar" src="{{item.userInfo.avatarUrl}}"></image>
+              <image class="avatar" lazy-load="true" mode="aspectFit" src="{{item.userInfo.avatarUrl}}"></image>
               <text class="nickname">{{item.userInfo.nickName}}</text>
             </view>
             <view class="time">{{item.addTime}}</view>

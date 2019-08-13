@@ -158,6 +158,6 @@ page {
   line-height: 100rpx;
   text-align: center;
   background: #fff;
-  color: red;
+  color: #b4282d;
   font-size: 30rpx;
 }

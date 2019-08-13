@@ -81,7 +81,7 @@ page {
 
 .item .info .name {
   font-size: 28rpx;
-  color: #333;
+  color: #b4282d;
   line-height: 40rpx;
 }
 

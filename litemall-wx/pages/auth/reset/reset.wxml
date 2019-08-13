@@ -24,7 +24,7 @@
       <image class="clear" id="clear-confirm-password" wx:if="{{ confirmPassword.length > 0 }}" src="/static/images/clear_input.png" catchtap="clearInput"></image>
     </view>
 
-    <button type="default" class="reset-btn" bindtap="startReset">密码重置</button>
+    <button type="primary" class="reset-btn" bindtap="startReset">密码重置</button>
 
   </view>
 </view>

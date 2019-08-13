@@ -197,7 +197,7 @@ page {
   max-width: 310rpx;
   line-height: 28rpx;
   font-size: 25rpx;
-  color: #333;
+  color: #b4282d;
   overflow: hidden;
 }
 
@@ -226,6 +226,7 @@ page {
 
 .cart-view .item .price {
   float: left;
+  color: #333;
 }
 
 .cart-view .item .open {
@@ -381,10 +382,16 @@ page {
   background: url(http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/checkbox-checked-822e54472a.png) no-repeat;
   background-size: 34rpx;
 }
-
+.edit-goods{
+  text-align:left;
+  color:#b4282d;
+  float:left;
+  font-size: 25rpx;
+}
 .cart-bottom .total {
   height: 34rpx;
   flex: 1;
+  color: #b4282d;
   margin: 33rpx 10rpx;
   font-size: 29rpx;
 }
@@ -449,7 +456,7 @@ page {
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
   /* background-image: linear-gradient(to right, #ff7701 100%); */
-  background-image: linear-gradient(to right, #ab956d 0%, #ab956d 100%);
+  background-image: linear-gradient(to right, #ff7835 0%, #c40000 100%);
 }
 
 .action_btn_area .checkout {
@@ -468,7 +475,7 @@ page {
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
-  background-image: linear-gradient(to right, #9a9ba1 0%, #9a9ba1 100%);
+  background-image: linear-gradient(to right, #5d8d00 0%, #008000 100%);
 }
 
 .action_btn_area .delete {
@@ -508,8 +515,7 @@ page {
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
-  background-image: linear-gradient(to right, #ab956d 0%, #ab956d 100%);
-  /* background-image: linear-gradient(to right, #ff7701 0%, #fe4800 100%); */
+  background-image: linear-gradient(to right, #83f 0%, #38f 100%);
 }
 
 .auth_btn {
