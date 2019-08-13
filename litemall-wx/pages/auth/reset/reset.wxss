@@ -43,6 +43,8 @@
   padding: 20rpx 40rpx;
   border: 1px solid #d9d9d9;
   border-radius: 10rpx;
+  color:#fff;
+  background-image: linear-gradient(to right, #ff7835 0%, #c40000 100%);
 }
 
 .form-item .clear {
@@ -63,6 +65,6 @@
   color: #fff;
   font-size: 30rpx;
   width: 100%;
-  background: #b4282d;
+  background-image: linear-gradient(to right, #83f 0%, #38f 100%);
   border-radius: 6rpx;
 }

@@ -449,7 +449,7 @@ page {
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
   /* background-image: linear-gradient(to right, #ff7701 100%); */
-  background-image: linear-gradient(to right, #ab956d 0%, #ab956d 100%);
+  background-image: linear-gradient(to right, #ff7835 0%, #c40000 100%);
 }
 
 .action_btn_area .checkout {
@@ -468,7 +468,7 @@ page {
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
-  background-image: linear-gradient(to right, #9a9ba1 0%, #9a9ba1 100%);
+  background-image: linear-gradient(to right, #5d8d00 0%, #008000 100%);
 }
 
 .action_btn_area .delete {
