@@ -1,18 +1,26 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"nodeModules": false,
+		"nodeModules": true,
 		"autoAudits": false,
 		"uglifyFileName": true,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.0",
+	"libVersion": "2.8.0",
 	"appid": "wxdd8e98ed7ebabd31",
 	"projectname": "litemall-wx",
 	"simulatorType": "wechat",

@@ -13,7 +13,7 @@
         <view class="item" wx:for="{{commentList}}" wx:key="id">
           <view class="info">
             <view class="user">
-              <image class="avatar" src="{{item.userInfo.avatarUrl}}"></image>
+              <image class="avatar" lazy-load="true" mode="aspectFit" src="{{item.userInfo.avatarUrl}}"></image>
               <text class="nickname">{{item.userInfo.nickName}}</text>
             </view>
             <view class="time">{{item.addTime}}</view>

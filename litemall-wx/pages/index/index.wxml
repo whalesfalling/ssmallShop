@@ -2,20 +2,20 @@
 <view class="container">
 <view class="search">
     <navigator url="/pages/search/search" class="input">
-      <image class="icon"></image>
+      <image class="icon" mode="aspectFit"></image>
       <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
     </navigator>
   </view>
   <swiper class="banner" indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="1000">
     <swiper-item wx:for="{{banner}}" wx:key="id">
       <!-- <navigator url="{{item.link}}"> -->
-      <image src="{{item.url}}" background-size="cover"></image>
+      <image src="{{item.url}}" lazy-load="true" mode="aspectFit" background-size="cover"></image>
       <!-- </navigator> -->
     </swiper-item>
   </swiper>
   <view class="m-menu">
     <navigator class="item" url="/pages/category/category?id={{item.id}}" wx:for="{{channel}}" wx:key="id">
-      <image src="{{item.iconUrl}}" background-size="cover"></image>
+      <image src="{{item.iconUrl}}" lazy-load="true" mode="aspectFit" background-size="cover"></image>
       <text>{{item.name}}</text>
     </navigator>
   </view>
@@ -33,7 +33,7 @@
     <view class="b">
       <view class="item" wx:for="{{groupons}}" wx:for-index="index" wx:for-item="item" wx:key="id">
         <navigator url="/pages/goods/goods?id={{item.id}}">
-          <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+          <image class="img" src="{{item.picUrl}}" lazy-load="true" mode="aspectFit" background-size="cover"></image>
           <view class="right">
             <view class="text">
               <view class="header">
@@ -64,7 +64,7 @@
       <view class="item item-1" wx:for="{{brands}}" wx:key="id">
         <navigator url="/pages/brandDetail/brandDetail?id={{item.id}}">
           <view class="wrap">
-            <image class="img" src="{{item.picUrl}}" mode="aspectFill"></image>
+            <image class="img" lazy-load="true" src="{{item.picUrl}}" mode="aspectFill"></image>
             <view class="mt">
               <text class="brand">{{item.name}}</text>
               <text class="price">{{item.floorPrice}}</text>
@@ -87,7 +87,7 @@
     <view class="b">
       <view class="item" wx:for="{{newGoods}}" wx:for-index="index" wx:for-item="item" wx:key="id">
         <navigator url="../goods/goods?id={{item.id}}">
-          <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+          <image class="img" src="{{item.picUrl}}" lazy-load="true" mode="aspectFit" background-size="cover"></image>
           <text class="name">{{item.name}}</text>
           <text class="price">￥{{item.retailPrice}}</text>
         </navigator>
@@ -106,7 +106,7 @@
     <view class="b">
       <view class="item" wx:for="{{hotGoods}}" wx:for-index="index" wx:for-item="item" wx:key="id">
         <navigator url="/pages/goods/goods?id={{item.id}}">
-          <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+          <image class="img" src="{{item.picUrl}}" lazy-load="true" mode="aspectFit" background-size="cover"></image>
           <view class="right">
             <view class="text">
               <text class="name">{{item.name}}</text>
@@ -127,7 +127,7 @@
       <block wx:for="{{item.goodsList}}" wx:for-index="iindex" wx:for-item="iitem" wx:key="id">
         <view class="item {{iindex % 2 == 0 ? '' : 'item-b'}}">
           <navigator url="../goods/goods?id={{iitem.id}}" class="a">
-            <image class="img" src="{{iitem.picUrl}}" background-size="cover"></image>
+            <image class="img" src="{{iitem.picUrl}}" lazy-load="true" mode="aspectFit" background-size="cover"></image>
             <text class="name">{{iitem.name}}</text>
             <text class="price">￥{{iitem.retailPrice}}</text>
           </navigator>
