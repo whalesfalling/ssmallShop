@@ -31,14 +31,21 @@ public class WxCreditsController {
     @GetMapping("myInfo")
     public Object myInfo(@LoginUser Integer userId,
                          @RequestParam(defaultValue = "1") Integer page,
-                         @RequestParam(defaultValue = "10") Integer size) {
+                         @RequestParam(defaultValue = "10") Integer limit) {
         if (userId == null) {
             return ResponseUtil.unlogin();
         }
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("myCredits", creditsService.getMyCredits(userId));
-        map.put("logList", creditsService.getMyCreditsLogList(userId, page, size));
-        return ResponseUtil.ok(map);
+        return ResponseUtil.ok(creditsService.getMyCredits(userId).getCredits());
+    }
+
+    @GetMapping("myLogList")
+    public Object myLogList(@LoginUser Integer userId,
+                         @RequestParam(defaultValue = "1") Integer page,
+                         @RequestParam(defaultValue = "10") Integer limit) {
+        if (userId == null) {
+            return ResponseUtil.unlogin();
+        }
+        return ResponseUtil.okList(creditsService.getMyCreditsLogList(userId, page, limit));
     }
 
     @GetMapping("addCredits")

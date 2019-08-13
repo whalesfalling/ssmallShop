@@ -1,8 +1,8 @@
 // 以下是业务服务器API地址
 // 本机开发时使用
-//var WxApiRoot = 'http://localhost:8080/wx/';
+var WxApiRoot = 'http://localhost:8080/wx/';
 // 云平台上线时使用
-var WxApiRoot = 'https://www.whalesfall.cn/wx/';
+// var WxApiRoot = 'https://www.whalesfall.cn/wx/';
 
 module.exports = {
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口
@@ -83,6 +83,8 @@ module.exports = {
   GroupOnJoin: WxApiRoot + 'groupon/join', //团购API-详情
 
   CreditsAdd: WxApiRoot + "credits/addCredits",//获得积分
+  CreditsInfo: WxApiRoot + "credits/myInfo",//我的积分
+  CreditsLogList: WxApiRoot + "credits/myLogList",//我的获取记录积分
 
   StorageUpload: WxApiRoot + 'storage/upload', //图片上传,
 

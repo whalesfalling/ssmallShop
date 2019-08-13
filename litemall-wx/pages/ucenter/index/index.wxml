@@ -35,10 +35,10 @@
         <image class='user_column_item_image' src='/static/images/comment.png'></image>
         <view class='user_column_item_text'>待评价</view>
       </view>
-      <view class='user_column_item' bindtap='goAfterSale'>
+      <!-- <view class='user_column_item' bindtap='goAfterSale'>
         <image class='user_column_item_image' src='/static/images/aftersale.png'></image>
         <view class='user_column_item_text'>售后</view>
-      </view>
+      </view> -->
     </view>
   </view>
 
@@ -48,7 +48,7 @@
     <view class='user_row_left'>核心服务</view>
   </view>
   <view class='user_column'>
-    <view class='user_column_item' bindtap='goCollect'>
+    <view class='user_column_item' bindtap='goCredits'>
       <image class='user_column_item_image' src='/static/images/credits.png'></image>
       <view class='user_column_item_text'>我的积分</view>
     </view>

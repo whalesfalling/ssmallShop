@@ -168,12 +168,12 @@
 					"pathName": "pages/commentPost/commentPost",
 					"query": "orderId=2&type=0&valueId=1116011"
 				},
-				{
-					"id": 22,
-					"name": "我的优惠券",
-					"pathName": "pages/ucenter/couponList/couponList",
-					"query": ""
-				},
+        {
+          "id": -1,
+          "name": "我的积分",
+          "pathName": "pages/ucenter/credits/credits",
+          "query": ""
+        },
 				{
 					"id": -1,
 					"name": "我的收藏",
