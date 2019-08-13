@@ -105,7 +105,7 @@ litemall:
       secretId: AKIDqjcLyMz4x1j278wXZ4f9dvAgKleTsHdE
       secretKey: Ek9k0EE3cRgUv6QYRRCWbWCeuzJUyCDy
       region: ap-chengdu
-      bucketName: litemall
+      bucketName: litemall-1258780439
     # 七牛云对象存储配置信息
     qiniu:
       endpoint: http://pd5cb6ulu.bkt.clouddn.com

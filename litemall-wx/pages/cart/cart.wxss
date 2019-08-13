@@ -382,11 +382,16 @@ page {
   background: url(http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/checkbox-checked-822e54472a.png) no-repeat;
   background-size: 34rpx;
 }
-
+.edit-goods{
+  text-align:left;
+  color:#b4282d;
+  float:left;
+  font-size: 25rpx;
+}
 .cart-bottom .total {
   height: 34rpx;
   flex: 1;
-  color: #83f;
+  color: #b4282d;
   margin: 33rpx 10rpx;
   font-size: 29rpx;
 }
