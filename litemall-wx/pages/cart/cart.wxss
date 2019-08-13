@@ -197,7 +197,7 @@ page {
   max-width: 310rpx;
   line-height: 28rpx;
   font-size: 25rpx;
-  color: #333;
+  color: #b4282d;
   overflow: hidden;
 }
 
@@ -226,6 +226,7 @@ page {
 
 .cart-view .item .price {
   float: left;
+  color: #333;
 }
 
 .cart-view .item .open {
@@ -385,6 +386,7 @@ page {
 .cart-bottom .total {
   height: 34rpx;
   flex: 1;
+  color: #83f;
   margin: 33rpx 10rpx;
   font-size: 29rpx;
 }
@@ -508,8 +510,7 @@ page {
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
-  background-image: linear-gradient(to right, #ab956d 0%, #ab956d 100%);
-  /* background-image: linear-gradient(to right, #ff7701 0%, #fe4800 100%); */
+  background-image: linear-gradient(to right, #83f 0%, #38f 100%);
 }
 
 .auth_btn {
