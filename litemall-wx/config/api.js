@@ -1,8 +1,8 @@
 // 以下是业务服务器API地址
 // 本机开发时使用
-var WxApiRoot = 'http://localhost:8080/wx/';
+// var WxApiRoot = 'http://localhost:8080/wx/';
 // 云平台上线时使用
-// var WxApiRoot = 'https://www.whalesfall.cn/wx/';
+var WxApiRoot = 'https://www.whalesfall.cn/wx/';
 
 module.exports = {
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口
