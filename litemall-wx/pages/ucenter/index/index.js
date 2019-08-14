@@ -117,6 +117,17 @@ Page({
       });
     };
   },
+  goCredits() {
+    if (this.data.hasLogin) {
+      wx.navigateTo({
+        url: "/pages/ucenter/credits/credits"
+      });
+    } else {
+      wx.navigateTo({
+        url: "/pages/auth/login/login"
+      });
+    };
+  },
   goCollect() {
     if (this.data.hasLogin) {
       wx.navigateTo({

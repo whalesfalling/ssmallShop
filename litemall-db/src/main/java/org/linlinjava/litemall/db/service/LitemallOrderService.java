@@ -6,6 +6,7 @@ import org.linlinjava.litemall.db.dao.OrderMapper;
 import org.linlinjava.litemall.db.domain.LitemallOrder;
 import org.linlinjava.litemall.db.domain.LitemallOrderExample;
 import org.linlinjava.litemall.db.util.OrderUtil;
+import org.linlinjava.litemall.db.util.SnowflakeIdFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -58,14 +59,12 @@ public class LitemallOrderService {
         return (int) litemallOrderMapper.countByExample(example);
     }
 
-    // TODO 这里应该产生一个唯一的订单，但是实际上这里仍然存在两个订单相同的可能性
+    // TODO 这里应该产生一个唯一的订单
     public String generateOrderSn(Integer userId) {
+        SnowflakeIdFactory idWorker = new SnowflakeIdFactory(1, 2);
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyyMMdd");
         String now = df.format(LocalDate.now());
-        String orderSn = now + getRandomNum(6);
-        while (countByOrderSn(userId, orderSn) != 0) {
-            orderSn = now + getRandomNum(6);
-        }
+        String orderSn = now + idWorker.nextId();
         return orderSn;
     }
 

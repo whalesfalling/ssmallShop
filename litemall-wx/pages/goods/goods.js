@@ -33,6 +33,7 @@ Page({
     isGroupon: false, //标识是否是一个参团购买
     soldout: false,
     canWrite: false, //用户是否获取了保存相册的权限
+    canWrite: false //用户是否获取了保存相册的权限
   },
 
   // 页面分享
@@ -420,6 +421,19 @@ Page({
   onShow: function() {
     // 页面显示
     var that = this;
+    if (this.data.openShare === true){
+      util.request(api.CreditsAdd).then(function (res) {
+        if (res.errno === 0){
+          wx.showModal({
+            title: '恭喜',
+            content: '获得' +res.data+'积分',
+            showCancel: false
+          });
+        }
+      });
+      
+    }
+    
     util.request(api.CartGoodsCount).then(function(res) {
       if (res.errno === 0) {
         that.setData({
@@ -639,15 +653,7 @@ Page({
   closeShare: function() {
     this.setData({
       openShare: false,
-    });
-    util.request(api.CreditsAdd).then(function (res) {
-      wx.showModal({
-        title: '恭喜',
-        content: '获得10积分',
-        showCancel: false
-      })
-    });
-    
+    });    
   },
   openCartPage: function() {
     wx.switchTab({

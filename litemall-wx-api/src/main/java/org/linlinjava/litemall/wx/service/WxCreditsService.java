@@ -34,12 +34,12 @@ public class WxCreditsService {
         return ppUserCreditsMapper.selectOneByExample(example);
     }
 
-    public List<PpUserCreditsLog> getMyCreditsLogList(Integer userId, Integer page, Integer size) {
+    public List<PpUserCreditsLog> getMyCreditsLogList(Integer userId, Integer page, Integer limit) {
         PpUserCreditsLogExample example = new PpUserCreditsLogExample();
         example.newAndCreateCriteria().andUserIdEqualTo(userId);
         example.orderBy("gain_date desc");
 
-        PageHelper.startPage(page, size);
+        PageHelper.startPage(page, limit);
         return ppUserCreditsLogMapper.selectByExample(example);
     }
 
@@ -81,7 +81,7 @@ public class WxCreditsService {
                 result = ppUserCreditsMapper.insert(userCredits);
             }
             if(result == 1){
-                return ResponseUtil.ok();
+                return ResponseUtil.ok(ppCreditsRule.getCredits());
             }else {
                 return ResponseUtil.updatedDataFailed();
             }
