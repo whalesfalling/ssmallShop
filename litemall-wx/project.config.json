@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -176,12 +176,12 @@
 					"pathName": "pages/commentPost/commentPost",
 					"query": "orderId=2&type=0&valueId=1116011"
 				},
-        {
-          "id": -1,
-          "name": "我的积分",
-          "pathName": "pages/ucenter/credits/credits",
-          "query": ""
-        },
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/ucenter/credits/credits",
+					"query": ""
+				},
 				{
 					"id": -1,
 					"name": "我的收藏",

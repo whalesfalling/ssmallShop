@@ -9,6 +9,7 @@ import org.linlinjava.litemall.core.util.ResponseUtil;
 import org.linlinjava.litemall.db.domain.*;
 import org.linlinjava.litemall.db.service.*;
 import org.linlinjava.litemall.wx.annotation.LoginUser;
+import org.linlinjava.litemall.wx.service.WxCreditsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -47,6 +48,10 @@ public class WxCartController {
     private LitemallCouponUserService couponUserService;
     @Autowired
     private CouponVerifyService couponVerifyService;
+    @Autowired
+    private CreditsRuleService creditsRuleService;
+    @Autowired
+    private WxCreditsService creditsService;
 
     /**
      * 用户购物车信息
@@ -111,7 +116,7 @@ public class WxCartController {
         if (!ObjectUtils.allNotNull(productId, number, goodsId)) {
             return ResponseUtil.badArgument();
         }
-        if(number <= 0){
+        if (number <= 0) {
             return ResponseUtil.badArgument();
         }
 
@@ -180,7 +185,7 @@ public class WxCartController {
         if (!ObjectUtils.allNotNull(productId, number, goodsId)) {
             return ResponseUtil.badArgument();
         }
-        if(number <= 0){
+        if (number <= 0) {
             return ResponseUtil.badArgument();
         }
 
@@ -245,7 +250,7 @@ public class WxCartController {
         if (!ObjectUtils.allNotNull(id, productId, number, goodsId)) {
             return ResponseUtil.badArgument();
         }
-        if(number <= 0){
+        if (number <= 0) {
             return ResponseUtil.badArgument();
         }
 
@@ -381,12 +386,10 @@ public class WxCartController {
      *                  如果购物车商品ID非空，则只下单当前购物车商品。
      * @param addressId 收货地址ID：
      *                  如果收货地址ID是空，则查询当前用户的默认地址。
-     * @param couponId  优惠券ID：
-     *                  如果优惠券ID是空，则自动选择合适的优惠券。
      * @return 购物车操作结果
      */
     @GetMapping("checkout")
-    public Object checkout(@LoginUser Integer userId, Integer cartId, Integer addressId, Integer couponId, Integer grouponRulesId) {
+    public Object checkout(@LoginUser Integer userId, Integer cartId, Integer addressId, Integer grouponRulesId) {
         if (userId == null) {
             return ResponseUtil.unlogin();
         }
@@ -436,52 +439,10 @@ public class WxCartController {
         for (LitemallCart cart : checkedGoodsList) {
             //  只有当团购规格商品ID符合才进行团购优惠
             if (grouponRules != null && grouponRules.getGoodsId().equals(cart.getGoodsId())) {
-                checkedGoodsPrice = checkedGoodsPrice.add(cart.getPrice().subtract(grouponPrice).multiply(new BigDecimal(cart.getNumber())));
+                checkedGoodsPrice =
+                        checkedGoodsPrice.add(cart.getPrice().subtract(grouponPrice).multiply(new BigDecimal(cart.getNumber())));
             } else {
                 checkedGoodsPrice = checkedGoodsPrice.add(cart.getPrice().multiply(new BigDecimal(cart.getNumber())));
-            }
-        }
-
-        // 计算优惠券可用情况
-        BigDecimal tmpCouponPrice = new BigDecimal(0.00);
-        Integer tmpCouponId = 0;
-        int tmpCouponLength = 0;
-        List<LitemallCouponUser> couponUserList = couponUserService.queryAll(userId);
-        for(LitemallCouponUser couponUser : couponUserList){
-            LitemallCoupon coupon = couponVerifyService.checkCoupon(userId, couponUser.getCouponId(), checkedGoodsPrice);
-            if(coupon == null){
-                continue;
-            }
-
-            tmpCouponLength++;
-            if(tmpCouponPrice.compareTo(coupon.getDiscount()) == -1){
-                tmpCouponPrice = coupon.getDiscount();
-                tmpCouponId = coupon.getId();
-            }
-        }
-        // 获取优惠券减免金额，优惠券可用数量
-        int availableCouponLength = tmpCouponLength;
-        BigDecimal couponPrice = new BigDecimal(0);
-        // 这里存在三种情况
-        // 1. 用户不想使用优惠券，则不处理
-        // 2. 用户想自动使用优惠券，则选择合适优惠券
-        // 3. 用户已选择优惠券，则测试优惠券是否合适
-        if (couponId == null || couponId.equals(-1)){
-            couponId = -1;
-        }
-        else if (couponId.equals(0)) {
-            couponPrice = tmpCouponPrice;
-            couponId = tmpCouponId;
-        }
-        else {
-            LitemallCoupon coupon = couponVerifyService.checkCoupon(userId, couponId, checkedGoodsPrice);
-            // 用户选择的优惠券有问题，则选择合适优惠券，否则使用用户选择的优惠券
-            if(coupon == null){
-                couponPrice = tmpCouponPrice;
-                couponId = tmpCouponId;
-            }
-            else {
-                couponPrice = coupon.getDiscount();
             }
         }
 
@@ -491,28 +452,49 @@ public class WxCartController {
             freightPrice = SystemConfig.getFreight();
         }
 
-        // 可以使用的其他钱，例如用户积分
-        BigDecimal integralPrice = new BigDecimal(0.00);
+        // 获得可选积分数组
+        List<BigDecimal> creditsList = calculateCreditsList(creditsService.getMyCredits(userId).getCredits(),checkedGoodsPrice,new BigDecimal(100));
 
         // 订单费用
-        BigDecimal orderTotalPrice = checkedGoodsPrice.add(freightPrice).subtract(couponPrice).max(new BigDecimal(0.00));
+        BigDecimal orderTotalPrice =
+                checkedGoodsPrice.add(freightPrice).max(new BigDecimal(0.00));
 
-        BigDecimal actualPrice = orderTotalPrice.subtract(integralPrice);
+//        BigDecimal actualPrice = orderTotalPrice.subtract(integralPrice);
+        BigDecimal actualPrice = orderTotalPrice;
 
         Map<String, Object> data = new HashMap<>();
         data.put("addressId", addressId);
-        data.put("couponId", couponId);
+//        data.put("couponId", couponId);
         data.put("cartId", cartId);
         data.put("grouponRulesId", grouponRulesId);
         data.put("grouponPrice", grouponPrice);
         data.put("checkedAddress", checkedAddress);
-        data.put("availableCouponLength", availableCouponLength);
+        data.put("creditsList", creditsList);
+//        data.put("availableCouponLength", availableCouponLength);
         data.put("goodsTotalPrice", checkedGoodsPrice);
         data.put("freightPrice", freightPrice);
-        data.put("couponPrice", couponPrice);
+//        data.put("couponPrice", couponPrice);
         data.put("orderTotalPrice", orderTotalPrice);
         data.put("actualPrice", actualPrice);
         data.put("checkedGoodsList", checkedGoodsList);
         return ResponseUtil.ok(data);
+    }
+
+    private List<BigDecimal> calculateCreditsList(BigDecimal credits, BigDecimal price, BigDecimal minCredits) {
+        if (credits == null || credits.compareTo(minCredits) == -1) {
+            return new ArrayList<BigDecimal>();
+        }
+        BigDecimal creditsRatio = creditsRuleService.getCreditsRule().getCreditsRatio();
+        BigDecimal creditsPrice = credits.divide(creditsRatio, 0, BigDecimal.ROUND_DOWN);
+
+        if (creditsPrice.compareTo(price) == 1) {
+            creditsPrice = price.setScale(0, BigDecimal.ROUND_DOWN);
+        }
+        BigDecimal maxcredits= creditsPrice.multiply(creditsRatio);
+        List<BigDecimal> list = new ArrayList<BigDecimal>();
+        for(int i = 0;minCredits.multiply(new BigDecimal(i)).compareTo(maxcredits) != 1;i++){
+            list.add(minCredits.multiply(new BigDecimal(i)));
+        }
+        return list;
     }
 }

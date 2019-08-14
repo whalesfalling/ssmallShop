@@ -7,14 +7,15 @@ Page({
   data: {
     checkedGoodsList: [],
     checkedAddress: {},
+    creditsList: [],
     goodsTotalPrice: 0.00, //商品总价
     freightPrice: 0.00, //快递费
     grouponPrice: 0.00, //团购优惠价格
+    selCredits: 0,//选择的积分下标
     orderTotalPrice: 0.00, //订单总价
     actualPrice: 0.00, //实际需要支付的总价
     cartId: 0,
     addressId: 0,
-    couponId: 0,
     message: '',
     grouponLinkId: 0, //参与的团购，如果是发起则为0
     grouponRulesId: 0 //团购规则ID
@@ -29,22 +30,22 @@ Page({
     util.request(api.CartCheckout, {
       cartId: that.data.cartId,
       addressId: that.data.addressId,
-      couponId: that.data.couponId,
       grouponRulesId: that.data.grouponRulesId
     }).then(function(res) {
       if (res.errno === 0) {
         that.setData({
           checkedGoodsList: res.data.checkedGoodsList,
           checkedAddress: res.data.checkedAddress,
+          creditsList: res.data.creditsList,
           actualPrice: res.data.actualPrice,
           grouponPrice: res.data.grouponPrice,
           freightPrice: res.data.freightPrice,
           goodsTotalPrice: res.data.goodsTotalPrice,
           orderTotalPrice: res.data.orderTotalPrice,
           addressId: res.data.addressId,
-          couponId: res.data.couponId,
           grouponRulesId: res.data.grouponRulesId,
         });
+        console.log("优惠数组", res.data.creditsList);
       }
       wx.hideLoading();
     });
@@ -77,10 +78,6 @@ Page({
       if (addressId === "") {
         addressId = 0;
       }
-      var couponId = wx.getStorageSync('couponId');
-      if (couponId === "") {
-        couponId = 0;
-      }
       var grouponRulesId = wx.getStorageSync('grouponRulesId');
       if (grouponRulesId === "") {
         grouponRulesId = 0;
@@ -93,7 +90,6 @@ Page({
       this.setData({
         cartId: cartId,
         addressId: addressId,
-        couponId: couponId,
         grouponRulesId: grouponRulesId,
         grouponLinkId: grouponLinkId
       });
@@ -121,19 +117,11 @@ Page({
     util.request(api.OrderSubmit, {
       cartId: this.data.cartId,
       addressId: this.data.addressId,
-      couponId: this.data.couponId,
       message: this.data.message,
       grouponRulesId: this.data.grouponRulesId,
       grouponLinkId: this.data.grouponLinkId
     }, 'POST').then(res => {
       if (res.errno === 0) {
-        
-        // 下单成功，重置couponId
-        try {
-          wx.setStorageSync('couponId', 0);
-        } catch (error) {
-
-        }
 
         const orderId = res.data.orderId;
         util.request(api.OrderPrepay, {
