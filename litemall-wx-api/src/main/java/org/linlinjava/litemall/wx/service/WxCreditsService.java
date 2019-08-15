@@ -29,14 +29,12 @@ public class WxCreditsService {
     private PpCreditsRuleMapper ppCreditsRuleMapper;
 
     public PpUserCredits getMyCredits(Integer userId) {
-        PpUserCreditsExample example = new PpUserCreditsExample();
-        example.newAndCreateCriteria().andUserIdEqualTo(userId);
+        PpUserCreditsExample example = PpUserCreditsExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
         return ppUserCreditsMapper.selectOneByExample(example);
     }
 
     public List<PpUserCreditsLog> getMyCreditsLogList(Integer userId, Integer page, Integer limit) {
-        PpUserCreditsLogExample example = new PpUserCreditsLogExample();
-        example.newAndCreateCriteria().andUserIdEqualTo(userId);
+        PpUserCreditsLogExample example = PpUserCreditsLogExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
         example.orderBy("gain_date desc");
 
         PageHelper.startPage(page, limit);
@@ -65,8 +63,7 @@ public class WxCreditsService {
             log.setAddTime(LocalDateTime.now());
             ppUserCreditsLogMapper.insert(log);
 
-            PpUserCreditsExample example = new PpUserCreditsExample();
-            example.newAndCreateCriteria().andUserIdEqualTo(userId);
+            PpUserCreditsExample example = PpUserCreditsExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
             PpUserCredits userCredits = ppUserCreditsMapper.selectOneByExample(example);
             int result = 0;
             if (userCredits != null) {

@@ -142,13 +142,14 @@ page {
 .message-box {
   margin-top: 20rpx;
   width: 100%;
-  height: auto;
+  /* height: auto; */
   overflow: hidden;
   background: #fff;
+  height: 190rpx;
 }
 
 .message-box .message-item {
-  height: 52.078rpx;
+  height: 160rpx;
   overflow: hidden;
   background: #fff;
   display: flex;
