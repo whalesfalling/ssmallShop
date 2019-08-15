@@ -30,11 +30,13 @@ public class WxCreditsService {
 
     public PpUserCredits getMyCredits(Integer userId) {
         PpUserCreditsExample example = PpUserCreditsExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
-        return ppUserCreditsMapper.selectOneByExample(example);
+        PpUserCredits ppUserCredits = ppUserCreditsMapper.selectOneByExample(example);
+        return ppUserCredits == null ? new PpUserCredits() : ppUserCredits;
     }
 
     public List<PpUserCreditsLog> getMyCreditsLogList(Integer userId, Integer page, Integer limit) {
-        PpUserCreditsLogExample example = PpUserCreditsLogExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
+        PpUserCreditsLogExample example =
+                PpUserCreditsLogExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
         example.orderBy("gain_date desc");
 
         PageHelper.startPage(page, limit);
@@ -63,7 +65,8 @@ public class WxCreditsService {
             log.setAddTime(LocalDateTime.now());
             ppUserCreditsLogMapper.insert(log);
 
-            PpUserCreditsExample example = PpUserCreditsExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
+            PpUserCreditsExample example =
+                    PpUserCreditsExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
             PpUserCredits userCredits = ppUserCreditsMapper.selectOneByExample(example);
             int result = 0;
             if (userCredits != null) {
@@ -77,13 +80,13 @@ public class WxCreditsService {
                 userCredits.setUpdateTime(LocalDateTime.now());
                 result = ppUserCreditsMapper.insert(userCredits);
             }
-            if(result == 1){
+            if (result == 1) {
                 return ResponseUtil.ok(ppCreditsRule.getCredits());
-            }else {
+            } else {
                 return ResponseUtil.updatedDataFailed();
             }
         } else {
-            return ResponseUtil.fail(CREDITS_UP,"今日获取次数已达上限");
+            return ResponseUtil.fail(CREDITS_UP, "今日获取次数已达上限");
         }
     }
 

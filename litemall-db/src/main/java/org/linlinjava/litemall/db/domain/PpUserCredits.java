@@ -31,7 +31,7 @@ public class PpUserCredits {
      *
      * @mbg.generated
      */
-    private BigDecimal credits;
+    private BigDecimal credits = BigDecimal.ZERO;
 
     /**
      *
