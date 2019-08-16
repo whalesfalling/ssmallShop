@@ -29,9 +29,7 @@ public class WxCreditsController {
 
 
     @GetMapping("myInfo")
-    public Object myInfo(@LoginUser Integer userId,
-                         @RequestParam(defaultValue = "1") Integer page,
-                         @RequestParam(defaultValue = "10") Integer limit) {
+    public Object myInfo(@LoginUser Integer userId) {
         if (userId == null) {
             return ResponseUtil.unlogin();
         }

@@ -119,8 +119,20 @@ Page({
   },
   goCredits() {
     if (this.data.hasLogin) {
-      wx.navigateTo({
-        url: "/pages/ucenter/credits/credits"
+      util.request(api.CreditsInfo).then(function (res) {
+        if (res.errno === 0) {
+          if (res.data === 0) {
+            wx.showToast({
+              title: '您暂时还没有积分呢,快去分享吧！',
+              icon: 'none',
+              duration: 2000
+            });
+          }else{
+            wx.navigateTo({
+              url: "/pages/ucenter/integral/integral"
+            });
+          }
+        }
       });
     } else {
       wx.navigateTo({

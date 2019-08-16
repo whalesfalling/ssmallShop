@@ -1,0 +1,14 @@
+<view class="container">
+   <view class="top">
+     <view class="img-view">
+       <image class="avatar" mode="aspectFit"  src="/static/images/yue.png"></image>
+     </view>
+     <view class="txt-view">
+       <text class="txt">积分余额</text>
+     </view>
+     <view class="txt-view">
+       <text class="txt-integral">{{myCredits}}</text>
+     </view>
+   </view>
+   <view class="load-button" bindtap="addressAddOrUpdate">积分明细</view>
+</view>

@@ -34,7 +34,8 @@
     "pages/groupon/grouponDetail/grouponDetail",
     "pages/help/help",
     "pages/donate/donate",
-    "pages/ucenter/credits/credits"
+    "pages/ucenter/credits/credits",
+    "pages/ucenter/integral/integral"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff3000",

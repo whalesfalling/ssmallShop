@@ -74,6 +74,7 @@ public class WxCreditsService {
                 userCredits.setUpdateTime(LocalDateTime.now());
                 result = ppUserCreditsMapper.updateByPrimaryKey(userCredits);
             } else {
+                userCredits = new PpUserCredits();
                 userCredits.setUserId(userId);
                 userCredits.setCredits(ppCreditsRule.getCredits());
                 userCredits.setAddTime(LocalDateTime.now());
