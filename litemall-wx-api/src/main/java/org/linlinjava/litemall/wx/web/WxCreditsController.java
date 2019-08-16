@@ -51,7 +51,6 @@ public class WxCreditsController {
         if (userId == null) {
             return ResponseUtil.unlogin();
         }
-
         return creditsService.addCredits(userId);
     }
 

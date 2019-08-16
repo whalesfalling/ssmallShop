@@ -9,6 +9,7 @@ Page({
    */
   data: {
     myCredits: 0,
+    hasLogin: false
   },
 
   /**
@@ -33,6 +34,19 @@ Page({
     wx.hideLoading();
   },
 
+  goCredits() {
+    if (!this.data.hasLogin) {
+      wx.navigateTo({
+        url: "/pages/auth/login/login"
+      });
+    }else{
+      wx.navigateTo({
+        url: "/pages/ucenter/credits/credits"
+      });
+      
+    }
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -44,7 +58,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (app.globalData.hasLogin) {
+      this.setData({
+        hasLogin: true
+      });
+    }
   },
 
   /**

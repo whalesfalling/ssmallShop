@@ -10,5 +10,5 @@
        <text class="txt-integral">{{myCredits}}</text>
      </view>
    </view>
-   <view class="load-button" bindtap="addressAddOrUpdate">积分明细</view>
+   <view class="load-button" bindtap="goCredits">积分明细</view>
 </view>

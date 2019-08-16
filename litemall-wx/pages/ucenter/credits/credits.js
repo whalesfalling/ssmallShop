@@ -5,7 +5,6 @@ var app = getApp();
 
 Page({
   data: {
-    myCredits: 0,
     creditsLogList: [],
     page: 1,
     limit: 10,
@@ -16,15 +15,6 @@ Page({
       title: '加载中...',
     });
     let that = this;
-    util.request(api.CreditsInfo).then(function (res) {
-      // console.log("积分", res.data);
-      if (res.errno === 0) {
-        that.setData({
-          myCredits: res.data
-        });
-      }
-      
-    });
     util.request(api.CreditsLogList, {
       page: that.data.page,
       limit: that.data.limit

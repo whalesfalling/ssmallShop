@@ -3,7 +3,7 @@
       <scroll-view scroll-y class="list">
         <view class="item" wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="id">
           <navigator url="../topicDetail/topicDetail?id={{item.id}}">
-            <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+            <image class="img" src="{{item.picUrl}}" mode="scaleToFill" background-size="cover"></image>
             <view class="np">
               <text class="price">{{item.title}}</text>
             </view>

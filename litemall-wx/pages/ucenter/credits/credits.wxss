@@ -112,12 +112,21 @@ page {
   font-size: 38rpx;
   color: #333;
   line-height: 40rpx;
+  float: right;
+  margin-right: 30rpx;
 }
 
 .item .date {
-  margin-bottom: 8rpx;
+  margin-top: 5rpx;
   font-size: 24rpx;
-  float: right;
   color: #888;
   line-height: 40rpx;
+  float: left;
+  margin-left: 50rpx;
+}
+
+.jinbi-view {
+  float:left;
+  width: 60rpx;
+  height: 50rpx;
 }
