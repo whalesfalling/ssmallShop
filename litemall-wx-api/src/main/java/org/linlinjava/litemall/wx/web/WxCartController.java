@@ -453,7 +453,25 @@ public class WxCartController {
         }
 
         // 获得可选积分数组
-        List<BigDecimal> creditsList = calculateCreditsList(creditsService.getMyCredits(userId).getCredits(),checkedGoodsPrice,new BigDecimal(100));
+//        List<BigDecimal> creditsList = calculateCreditsList(creditsService.getMyCredits(userId).getCredits(),checkedGoodsPrice,new BigDecimal(100));
+
+        BigDecimal credits = creditsService.getMyCredits(userId).getCredits();
+        BigDecimal minCredits = new BigDecimal(100);
+        boolean usableCredits = true;
+        BigDecimal maxCreditsPrice = BigDecimal.ZERO;
+        BigDecimal maxCredits = BigDecimal.ZERO;
+        if (credits == null || credits.compareTo(minCredits) == -1) {
+            usableCredits = false;
+        } else {
+            BigDecimal creditsRatio = creditsRuleService.getCreditsRule().getCreditsRatio();
+            maxCreditsPrice = credits.divide(creditsRatio, 0, BigDecimal.ROUND_DOWN);
+
+            if (maxCreditsPrice.compareTo(checkedGoodsPrice) == 1) {
+                maxCreditsPrice = checkedGoodsPrice.setScale(0, BigDecimal.ROUND_DOWN);
+            }
+            maxCredits = maxCreditsPrice.multiply(creditsRatio);
+        }
+
 
         // 订单费用
         BigDecimal orderTotalPrice =
@@ -469,7 +487,9 @@ public class WxCartController {
         data.put("grouponRulesId", grouponRulesId);
         data.put("grouponPrice", grouponPrice);
         data.put("checkedAddress", checkedAddress);
-        data.put("creditsList", creditsList);
+        data.put("usableCredits", usableCredits);
+        data.put("maxCreditsPrice", maxCreditsPrice);
+        data.put("maxCredits", maxCredits);
 //        data.put("availableCouponLength", availableCouponLength);
         data.put("goodsTotalPrice", checkedGoodsPrice);
         data.put("freightPrice", freightPrice);
@@ -480,21 +500,21 @@ public class WxCartController {
         return ResponseUtil.ok(data);
     }
 
-    private List<BigDecimal> calculateCreditsList(BigDecimal credits, BigDecimal price, BigDecimal minCredits) {
-        if (credits == null || credits.compareTo(minCredits) == -1) {
-            return new ArrayList<BigDecimal>();
-        }
-        BigDecimal creditsRatio = creditsRuleService.getCreditsRule().getCreditsRatio();
-        BigDecimal creditsPrice = credits.divide(creditsRatio, 0, BigDecimal.ROUND_DOWN);
-
-        if (creditsPrice.compareTo(price) == 1) {
-            creditsPrice = price.setScale(0, BigDecimal.ROUND_DOWN);
-        }
-        BigDecimal maxcredits= creditsPrice.multiply(creditsRatio);
-        List<BigDecimal> list = new ArrayList<BigDecimal>();
-        for(int i = 0;minCredits.multiply(new BigDecimal(i)).compareTo(maxcredits) != 1;i++){
-            list.add(minCredits.multiply(new BigDecimal(i)));
-        }
-        return list;
-    }
+//    private List<BigDecimal> calculateCreditsList(BigDecimal credits, BigDecimal price, BigDecimal minCredits) {
+//        if (credits == null || credits.compareTo(minCredits) == -1) {
+//            return new ArrayList<BigDecimal>();
+//        }
+//        BigDecimal creditsRatio = creditsRuleService.getCreditsRule().getCreditsRatio();
+//        BigDecimal maxCreditsPrice = credits.divide(creditsRatio, 0, BigDecimal.ROUND_DOWN);
+//
+//        if (maxCreditsPrice.compareTo(price) == 1) {
+//            maxCreditsPrice = price.setScale(0, BigDecimal.ROUND_DOWN);
+//        }
+//        BigDecimal maxCredits = maxCreditsPrice.multiply(creditsRatio);
+////        List<BigDecimal> list = new ArrayList<BigDecimal>();
+////        for(int i = 0;minCredits.multiply(new BigDecimal(i)).compareTo(maxcredits) != 1;i++){
+////            list.add(minCredits.multiply(new BigDecimal(i)));
+////        }
+//        return list;
+//    }
 }
