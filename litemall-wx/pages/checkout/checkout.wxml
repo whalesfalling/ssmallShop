@@ -40,12 +40,13 @@
         <text class="txt">￥{{freightPrice}}元</text>
       </view>
     </view>
-    <view class="order-item no-border">
+    <view class="order-item-rr" wx:if="{{usableCredits}}">
       <view class="l">
         <text class="name">积分</text>
       </view>
-      <view class="r">
-        <text class="txt">-￥{{couponPrice}}元</text>
+      <view class="r" wx:if="{{usableCredits}}">
+        <text class="msg">可使用{{maxCredits}}积分抵扣{{maxCreditsPrice}}元</text>
+        <switch class="switch" bindchange="switchChange" />
       </view>
     </view>
   </view>

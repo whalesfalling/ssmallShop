@@ -114,6 +114,16 @@ page {
   line-height: 40rpx;
   float: right;
   margin-right: 30rpx;
+  min-width: 100rpx;
+}
+
+.item .event {
+  margin-top: 5rpx;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 40rpx;
+  float: left;
+  margin-left: 50rpx;
 }
 
 .item .date {
@@ -121,8 +131,8 @@ page {
   font-size: 24rpx;
   color: #888;
   line-height: 40rpx;
-  float: left;
-  margin-left: 50rpx;
+  float: right;
+  margin-right: 20rpx;
 }
 
 .jinbi-view {

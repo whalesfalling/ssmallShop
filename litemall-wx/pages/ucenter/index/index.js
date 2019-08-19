@@ -119,19 +119,11 @@ Page({
   },
   goCredits() {
     if (this.data.hasLogin) {
-      util.request(api.CreditsInfo).then(function (res) {
+      util.request(api.CreditsInfo).then(function(res) {
         if (res.errno === 0) {
-          if (res.data === 0) {
-            wx.showToast({
-              title: '您暂时还没有积分呢,快去分享吧！',
-              icon: 'none',
-              duration: 2000
-            });
-          }else{
-            wx.navigateTo({
-              url: "/pages/ucenter/integral/integral"
-            });
-          }
+          wx.navigateTo({
+            url: "/pages/ucenter/integral/integral"
+          });
         }
       });
     } else {
@@ -224,11 +216,11 @@ Page({
       url: '/pages/about/about'
     });
   },
-  goHelp: function () {
+  goHelp: function() {
     wx.navigateTo({
       url: '/pages/help/help'
     });
-  },  
+  },
   exitLogin: function() {
     wx.showModal({
       title: '',

@@ -61,8 +61,8 @@
           <text class="txt">￥{{orderInfo.freightPrice}}</text>
         </view>
         <view class="t">
-          <text class="label">优惠：</text>
-          <text class="txt">￥-{{orderInfo.couponPrice}}</text>
+          <text class="label">积分抵扣：</text>
+          <text class="txt">￥-{{orderInfo.integralPrice}}</text>
         </view>
       </view>
       <view class="pay-fee">

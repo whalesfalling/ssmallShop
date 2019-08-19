@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -37,7 +38,7 @@ public class WxCreditsService {
     public List<PpUserCreditsLog> getMyCreditsLogList(Integer userId, Integer page, Integer limit) {
         PpUserCreditsLogExample example =
                 PpUserCreditsLogExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
-        example.orderBy("gain_date desc");
+        example.orderBy("add_time desc");
 
         PageHelper.startPage(page, limit);
         return ppUserCreditsLogMapper.selectByExample(example);
@@ -63,6 +64,8 @@ public class WxCreditsService {
             log.setCredits(ppCreditsRule.getCredits());
             log.setGainDate(LocalDate.now());
             log.setAddTime(LocalDateTime.now());
+            log.setState(1);
+            log.setEvent("分享获得");
             ppUserCreditsLogMapper.insert(log);
 
             PpUserCreditsExample example =
@@ -88,6 +91,48 @@ public class WxCreditsService {
             }
         } else {
             return ResponseUtil.fail(CREDITS_UP, "今日获取次数已达上限");
+        }
+    }
+
+    @Transactional
+    public void getBackCredits(Integer userId, BigDecimal credits) {
+        PpUserCreditsExample example =
+                PpUserCreditsExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
+        PpUserCredits userCredits = ppUserCreditsMapper.selectOneByExample(example);
+        if (userCredits != null) {
+            PpUserCreditsLog log = new PpUserCreditsLog();
+            log.setUserId(userId);
+            log.setCredits(credits);
+            log.setGainDate(LocalDate.now());
+            log.setAddTime(LocalDateTime.now());
+            log.setState(1);
+            log.setEvent("积分返还");
+            ppUserCreditsLogMapper.insert(log);
+
+            userCredits.setCredits(userCredits.getCredits().add(credits));
+            userCredits.setUpdateTime(LocalDateTime.now());
+            ppUserCreditsMapper.updateByPrimaryKey(userCredits);
+        }
+    }
+
+    @Transactional
+    public void useCredits(Integer userId, BigDecimal credits) {
+        PpUserCreditsExample example =
+                PpUserCreditsExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
+        PpUserCredits userCredits = ppUserCreditsMapper.selectOneByExample(example);
+        if (userCredits != null) {
+            PpUserCreditsLog log = new PpUserCreditsLog();
+            log.setUserId(userId);
+            log.setCredits(credits);
+            log.setGainDate(LocalDate.now());
+            log.setAddTime(LocalDateTime.now());
+            log.setState(0);
+            log.setEvent("积分抵扣");
+            ppUserCreditsLogMapper.insert(log);
+
+            userCredits.setCredits(userCredits.getCredits().subtract(credits));
+            userCredits.setUpdateTime(LocalDateTime.now());
+            ppUserCreditsMapper.updateByPrimaryKey(userCredits);
         }
     }
 

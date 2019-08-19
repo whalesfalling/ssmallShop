@@ -177,12 +177,31 @@ page {
   border-bottom: 1px solid #d9d9d9;
 }
 
+.order-box .order-item-rr {
+  height: 104.3rpx;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  margin-left: 31.25rpx;
+  padding-right: 31.25rpx;
+  border-bottom: 1px solid #d9d9d9;
+}
+
 .order-box .order-item .l {
   float: left;
   height: 52rpx;
   width: 50%;
   line-height: 52rpx;
   overflow: hidden;
+}
+
+.order-box .order-item-rr .l {
+  float: left;
+  height: 52rpx;
+  width: 20%;
+  line-height: 52rpx;
+  overflow: hidden;
+  margin-top: 26rpx;
 }
 
 .order-box .order-item .r {
@@ -194,7 +213,26 @@ page {
   overflow: hidden;
 }
 
+.order-box .order-item-rr .r {
+  float: right;
+  text-align: right;
+  width: 80%;
+  height: 92rpx;
+  line-height: 92rpx;
+  overflow: hidden;
+  margin-top: 6rpx;
+}
+
+.order-box .order-item-rr .r .msg {
+  margin-right: 20rpx;
+  color: rgb(136, 136, 136);
+}
+
 .order-box .order-item.no-border {
+  border-bottom: none;
+}
+
+.order-box .order-item-rr .no-border {
   border-bottom: none;
 }
 

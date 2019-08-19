@@ -98,12 +98,16 @@ public class WxOrderService {
     private ExpressService expressService;
     @Autowired
     private LitemallCommentService commentService;
+    //    @Autowired
+//    private LitemallCouponService couponService;
+//    @Autowired
+//    private LitemallCouponUserService couponUserService;
+//    @Autowired
+//    private CouponVerifyService couponVerifyService;
     @Autowired
-    private LitemallCouponService couponService;
+    private WxCreditsService creditsService;
     @Autowired
-    private LitemallCouponUserService couponUserService;
-    @Autowired
-    private CouponVerifyService couponVerifyService;
+    private CreditsRuleService creditsRuleService;
 
     /**
      * 订单列表
@@ -116,7 +120,7 @@ public class WxOrderService {
      *                 3，待收货；
      *                 4，待评价。
      * @param page     分页页数
-     * @param limit     分页大小
+     * @param limit    分页大小
      * @return 订单列表
      */
     public Object list(Integer userId, Integer showType, Integer page, Integer limit, String sort, String order) {
@@ -190,7 +194,8 @@ public class WxOrderService {
         orderVo.put("mobile", order.getMobile());
         orderVo.put("address", order.getAddress());
         orderVo.put("goodsPrice", order.getGoodsPrice());
-        orderVo.put("couponPrice", order.getCouponPrice());
+//        orderVo.put("couponPrice", order.getCouponPrice());
+        orderVo.put("integralPrice", order.getIntegralPrice());
         orderVo.put("freightPrice", order.getFreightPrice());
         orderVo.put("actualPrice", order.getActualPrice());
         orderVo.put("orderStatusText", OrderUtil.orderStatusText(order));
@@ -239,6 +244,8 @@ public class WxOrderService {
         Integer cartId = JacksonUtil.parseInteger(body, "cartId");
         Integer addressId = JacksonUtil.parseInteger(body, "addressId");
 //        Integer couponId = JacksonUtil.parseInteger(body, "couponId");
+        Integer useCredits = JacksonUtil.parseInteger(body, "useCredits");
+        BigDecimal credits = new BigDecimal(JacksonUtil.parseInteger(body, "credits"));
         String message = JacksonUtil.parseString(body, "message");
         Integer grouponRulesId = JacksonUtil.parseInteger(body, "grouponRulesId");
         Integer grouponLinkId = JacksonUtil.parseInteger(body, "grouponLinkId");
@@ -289,9 +296,11 @@ public class WxOrderService {
         for (LitemallCart checkGoods : checkedGoodsList) {
             //  只有当团购规格商品ID符合才进行团购优惠
             if (grouponRules != null && grouponRules.getGoodsId().equals(checkGoods.getGoodsId())) {
-                checkedGoodsPrice = checkedGoodsPrice.add(checkGoods.getPrice().subtract(grouponPrice).multiply(new BigDecimal(checkGoods.getNumber())));
+                checkedGoodsPrice =
+                        checkedGoodsPrice.add(checkGoods.getPrice().subtract(grouponPrice).multiply(new BigDecimal(checkGoods.getNumber())));
             } else {
-                checkedGoodsPrice = checkedGoodsPrice.add(checkGoods.getPrice().multiply(new BigDecimal(checkGoods.getNumber())));
+                checkedGoodsPrice =
+                        checkedGoodsPrice.add(checkGoods.getPrice().multiply(new BigDecimal(checkGoods.getNumber())));
             }
         }
 
@@ -307,6 +316,26 @@ public class WxOrderService {
 //            couponPrice = coupon.getDiscount();
 //        }
 
+        BigDecimal creditsPrice = new BigDecimal(0.00);
+        // 是否使用积分
+        if (useCredits == 1) {
+            if (creditsService.getMyCredits(userId).getCredits().compareTo(credits) == -1) {
+                return ResponseUtil.fail(CREDITS_UP, "积分发生变动");
+            }
+
+            // 判断积分是否小于最小使用积分
+            BigDecimal minCredits = new BigDecimal(100);
+            if (credits.compareTo(minCredits) == -1) {
+                return ResponseUtil.badArgumentValue();
+            }
+
+            BigDecimal creditsRatio = creditsRuleService.getCreditsRule().getCreditsRatio();
+            creditsPrice = credits.divide(creditsRatio, 0, BigDecimal.ROUND_DOWN);
+            if (creditsPrice.compareTo(checkedGoodsPrice) == 1) {
+                return ResponseUtil.badArgumentValue();
+            }
+        }
+
 
         // 根据订单商品总价计算运费，满足条件（例如88元）则免运费，否则需要支付运费（例如8元）；
         BigDecimal freightPrice = new BigDecimal(0.00);
@@ -314,14 +343,12 @@ public class WxOrderService {
             freightPrice = SystemConfig.getFreight();
         }
 
-        // 可以使用的其他钱，例如用户积分
-        BigDecimal integralPrice = new BigDecimal(0.00);
 
         // 订单费用
 //        BigDecimal orderTotalPrice = checkedGoodsPrice.add(freightPrice).subtract(couponPrice).max(new BigDecimal(0.00));
         BigDecimal orderTotalPrice = checkedGoodsPrice.add(freightPrice).max(new BigDecimal(0.00));
         // 最终支付费用
-        BigDecimal actualPrice = orderTotalPrice.subtract(integralPrice);
+        BigDecimal actualPrice = orderTotalPrice.subtract(creditsPrice);
 
         Integer orderId = null;
         LitemallOrder order = null;
@@ -333,12 +360,14 @@ public class WxOrderService {
         order.setConsignee(checkedAddress.getName());
         order.setMobile(checkedAddress.getTel());
         order.setMessage(message);
-        String detailedAddress = checkedAddress.getProvince() + checkedAddress.getCity() + checkedAddress.getCounty() + " " + checkedAddress.getAddressDetail();
+        String detailedAddress =
+                checkedAddress.getProvince() + checkedAddress.getCity() + checkedAddress.getCounty() + " " + checkedAddress.getAddressDetail();
         order.setAddress(detailedAddress);
         order.setGoodsPrice(checkedGoodsPrice);
         order.setFreightPrice(freightPrice);
         order.setCouponPrice(BigDecimal.ZERO);
-        order.setIntegralPrice(integralPrice);
+        order.setIntegralPrice(creditsPrice);
+        order.setIntegral(credits);
         order.setOrderPrice(orderTotalPrice);
         order.setActualPrice(actualPrice);
 
@@ -396,6 +425,9 @@ public class WxOrderService {
 //            couponUser.setOrderId(orderId);
 //            couponUserService.update(couponUser);
 //        }
+
+        // 如果使用了积分,修改积分值
+        creditsService.useCredits(userId, credits);
 
         //如果是团购项目，添加团购信息
         if (grouponRulesId != null && grouponRulesId > 0) {
@@ -479,6 +511,11 @@ public class WxOrderService {
             if (productService.addStock(productId, number) == 0) {
                 throw new RuntimeException("商品货品库存增加失败");
             }
+        }
+
+        // 返还积分
+        if (order.getIntegral() != null && order.getIntegral().compareTo(BigDecimal.ZERO) != 0) {
+            creditsService.getBackCredits(userId, order.getIntegral());
         }
 
         return ResponseUtil.ok();
@@ -586,11 +623,11 @@ public class WxOrderService {
         try {
             result = wxPayService.parseOrderNotifyResult(xmlResult);
 
-            if(!WxPayConstants.ResultCode.SUCCESS.equals(result.getResultCode())){
+            if (!WxPayConstants.ResultCode.SUCCESS.equals(result.getResultCode())) {
                 logger.error(xmlResult);
                 throw new WxPayException("微信通知支付失败！");
             }
-            if(!WxPayConstants.ResultCode.SUCCESS.equals(result.getReturnCode())){
+            if (!WxPayConstants.ResultCode.SUCCESS.equals(result.getReturnCode())) {
                 logger.error(xmlResult);
                 throw new WxPayException("微信通知支付失败！");
             }
@@ -652,7 +689,8 @@ public class WxOrderService {
 
             //仅当发起者才创建分享图片
             if (groupon.getGrouponId() == 0) {
-                String url = qCodeService.createGrouponShareImage(grouponRules.getGoodsName(), grouponRules.getPicUrl(), groupon);
+                String url =
+                        qCodeService.createGrouponShareImage(grouponRules.getGoodsName(), grouponRules.getPicUrl(), groupon);
                 groupon.setShareUrl(url);
             }
             groupon.setPayed(true);

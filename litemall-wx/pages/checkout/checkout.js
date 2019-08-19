@@ -7,16 +7,18 @@ Page({
   data: {
     checkedGoodsList: [],
     checkedAddress: {},
-    creditsList: [],
+    usableCredits: false,
+    maxCreditsPrice: 0,//积分抵扣金额
+    maxCredits: 0,//积分抵扣消耗分数
     goodsTotalPrice: 0.00, //商品总价
     freightPrice: 0.00, //快递费
     grouponPrice: 0.00, //团购优惠价格
-    selCredits: 0,//选择的积分下标
     orderTotalPrice: 0.00, //订单总价
     actualPrice: 0.00, //实际需要支付的总价
     cartId: 0,
     addressId: 0,
     message: '',
+    useCredits: 0, //是否使用积分
     grouponLinkId: 0, //参与的团购，如果是发起则为0
     grouponRulesId: 0 //团购规则ID
   },
@@ -36,7 +38,9 @@ Page({
         that.setData({
           checkedGoodsList: res.data.checkedGoodsList,
           checkedAddress: res.data.checkedAddress,
-          creditsList: res.data.creditsList,
+          usableCredits: res.data.usableCredits,
+          maxCreditsPrice: res.data.maxCreditsPrice,
+          maxCredits: res.data.maxCredits,
           actualPrice: res.data.actualPrice,
           grouponPrice: res.data.grouponPrice,
           freightPrice: res.data.freightPrice,
@@ -45,7 +49,6 @@ Page({
           addressId: res.data.addressId,
           grouponRulesId: res.data.grouponRulesId,
         });
-        console.log("优惠数组", res.data.creditsList);
       }
       wx.hideLoading();
     });
@@ -59,6 +62,20 @@ Page({
     this.setData({
       message: e.detail.value
     });
+  },
+  switchChange: function(e) {
+    let that = this;
+    if (e.detail.value){
+      this.setData({
+        useCredits: 1,
+        actualPrice: that.data.actualPrice - that.data.maxCreditsPrice
+      });
+    } else {
+      this.setData({
+        useCredits: 0,
+        actualPrice: that.data.actualPrice + that.data.maxCreditsPrice
+      });
+    }
   },
   onReady: function() {
     // 页面渲染完成
@@ -119,10 +136,11 @@ Page({
       addressId: this.data.addressId,
       message: this.data.message,
       grouponRulesId: this.data.grouponRulesId,
-      grouponLinkId: this.data.grouponLinkId
+      grouponLinkId: this.data.grouponLinkId,
+      useCredits: this.data.useCredits,
+      credits: this.data.maxCredits
     }, 'POST').then(res => {
       if (res.errno === 0) {
-
         const orderId = res.data.orderId;
         util.request(api.OrderPrepay, {
           orderId: orderId
@@ -160,8 +178,10 @@ Page({
         });
 
       } else {
-        wx.redirectTo({
-          url: '/pages/payResult/payResult?status=0&orderId=' + orderId
+        wx.showToast({
+          title: res.errmsg,
+          icon: 'none',
+          duration: 2000
         });
       }
     });
