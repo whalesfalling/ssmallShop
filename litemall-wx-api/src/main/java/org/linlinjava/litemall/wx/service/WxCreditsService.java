@@ -105,7 +105,7 @@ public class WxCreditsService {
             log.setCredits(credits);
             log.setGainDate(LocalDate.now());
             log.setAddTime(LocalDateTime.now());
-            log.setState(1);
+            log.setState(2);
             log.setEvent("积分返还");
             ppUserCreditsLogMapper.insert(log);
 
