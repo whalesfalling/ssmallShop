@@ -11,4 +11,43 @@
      </view>
    </view>
    <view class="load-button" bindtap="goCredits">积分明细</view>
+   
+  <view class="common-problem">
+    <view class="h">
+      <view class="line"></view>
+      <text class="title">常见问题</text>
+    </view>
+    <view class="b">
+      <view class="item">
+        <view class="question-box">
+          <text class="spot"></text>
+          <text class="question">积分如何使用</text>
+        </view>
+        <br/>
+        <view class="answer">
+          当积分满足积分抵扣规则后，可在下单页面进行积分抵扣，不满足时，积分抵扣入口会隐藏，积分可以用来抵扣现金.
+        </view>
+      </view>
+      <view class="item">
+        <view class="question-box">
+          <text class="spot"></text>
+          <text class="question">如何获取积分</text>
+        </view>
+        <br/>
+        <view class="answer">
+          每日分享商品可以获取积分，每天拥有三次分享机会，超出的次数将无法继续获取，参加官方活动也可获取积分。
+        </view>
+      </view>
+      <view class="item">
+        <view class="question-box">
+          <text class="spot"></text>
+          <text class="question">积分无法使用</text>
+        </view>
+        <br/>
+        <view class="answer">
+          当积分不足时，无法使用积分进行抵扣；当商品不支持积分抵扣时，将无法使用积分抵扣，其他情况可以联系客服人员进行解决，也可以进行提交反馈，我们将在最短的时间内帮您解决遇到的问题。
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

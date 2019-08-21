@@ -1,10 +1,10 @@
 page {
-  background: #f4f4f4;
+  background: #fff;
   min-height: 100%;
 }
 
 .container {
-  background: #f4f4f4;
+  background: #fff;
   min-height: 100%;
   width: 100%;
   height: auto;
@@ -63,7 +63,6 @@ txt-view {
   width: 90%;
   height: 90rpx;
   line-height: 98rpx;
-  position: absolute;
   bottom: 0;
   left: 0;
   border-radius: 0;
@@ -79,6 +78,93 @@ txt-view {
   border-top-right-radius: 15rpx;
   border-bottom-right-radius: 15rpx;
   letter-spacing: 3rpx;
-  margin-bottom: 470rpx;
+  margin-bottom: 20rpx;
   background-image: linear-gradient(to right, #83f 0%, #38f 100%);
+}
+
+.common-problem {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+}
+
+.common-problem .h {
+  position: relative;
+  height: 145.5rpx;
+  width: 750rpx;
+  padding: 56.25rpx 0;
+  background: #fff;
+  text-align: center;
+}
+
+.common-problem .h .line {
+  display: inline-block;
+  position: absolute;
+  top: 72rpx;
+  left: 0;
+  z-index: 2;
+  height: 1px;
+  margin-left: 225rpx;
+  width: 300rpx;
+  background: #ccc;
+}
+
+.common-problem .h .title {
+  display: inline-block;
+  position: absolute;
+  top: 56.125rpx;
+  left: 0;
+  z-index: 3;
+  height: 33rpx;
+  margin-left: 285rpx;
+  width: 180rpx;
+  background: #fff;
+}
+
+.common-problem .b {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 0rpx 30rpx;
+  background: #fff;
+}
+
+.common-problem .item {
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 25rpx;
+}
+
+.question-box {
+  height: 28rpx;
+  width: 758rpx;
+}
+
+.common-problem .question-box .spot {
+  float: left;
+  display: block;
+  height: 8rpx;
+  width: 8rpx;
+  background: #b4282d;
+  border-radius: 50%;
+  margin-top: 11rpx;
+}
+
+.common-problem .question-box .question {
+  float: left;
+  line-height: 30rpx;
+  padding-left: 8rpx;
+  display: block;
+  font-size: 26rpx;
+  padding-bottom: 15rpx;
+  color: #303030;
+  width: 100%；
+}
+
+.common-problem .answer {
+  line-height: 36rpx;
+  padding-left: 16rpx;
+  font-size: 26rpx;
+  color: #787878;
+  float: left;
 }
