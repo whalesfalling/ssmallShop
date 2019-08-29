@@ -460,14 +460,16 @@ public class WxCartController {
         boolean usableCredits = true;
         BigDecimal maxCreditsPrice = BigDecimal.ZERO;
         BigDecimal maxCredits = BigDecimal.ZERO;
+        // 如果积分为空或者积分比最小可用积分少
         if (credits == null || credits.compareTo(minCredits) == -1) {
             usableCredits = false;
         } else {
             BigDecimal creditsRatio = creditsRuleService.getCreditsRule().getCreditsRatio();
             maxCreditsPrice = credits.divide(creditsRatio, 0, BigDecimal.ROUND_DOWN);
-
+            // 如果积分可抵扣价格大于商品价格
             if (maxCreditsPrice.compareTo(checkedGoodsPrice) == 1) {
                 maxCreditsPrice = checkedGoodsPrice.setScale(0, BigDecimal.ROUND_DOWN);
+                usableCredits = false;
             }
             maxCredits = maxCreditsPrice.multiply(creditsRatio);
         }

@@ -326,13 +326,13 @@ public class WxOrderService {
             // 判断积分是否小于最小使用积分
             BigDecimal minCredits = new BigDecimal(100);
             if (credits.compareTo(minCredits) == -1) {
-                return ResponseUtil.badArgumentValue();
+                return ResponseUtil.fail(CREDITS_ERROR, "积分使用异常");
             }
 
             BigDecimal creditsRatio = creditsRuleService.getCreditsRule().getCreditsRatio();
             creditsPrice = credits.divide(creditsRatio, 0, BigDecimal.ROUND_DOWN);
             if (creditsPrice.compareTo(checkedGoodsPrice) == 1) {
-                return ResponseUtil.badArgumentValue();
+                return ResponseUtil.fail(CREDITS_ERROR, "积分使用异常");
             }
         }
 

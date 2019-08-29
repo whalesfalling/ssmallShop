@@ -35,7 +35,7 @@ public class WxResponseCode {
 
 
     public static final int CREDITS_UP=750;
+    public static final int CREDITS_ERROR=751;
 
-    public static final int CREDITS_LACK=760;
 
 }
