@@ -117,6 +117,9 @@ public class WxCreditsService {
 
     @Transactional
     public void useCredits(Integer userId, BigDecimal credits) {
+        if(credits == null || credits.compareTo(BigDecimal.ZERO)==0){
+            return;
+        }
         PpUserCreditsExample example =
                 PpUserCreditsExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
         PpUserCredits userCredits = ppUserCreditsMapper.selectOneByExample(example);
