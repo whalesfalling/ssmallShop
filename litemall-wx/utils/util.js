@@ -85,9 +85,35 @@ function showErrorToast(msg) {
   })
 }
 
+function showLoading(message) {
+  if(wx.showLoading){
+    wx.showLoading({
+      title: message,
+      mask:true
+    });
+  }else{
+    wx.showToast({
+      title: message,
+      icon: 'none',
+      mask:true,
+      duration:20000
+    })
+  }
+}
+
+function hideLoading(){
+  if(wx.hideLoading){
+    wx.hideLoading();
+  }else{
+    wx.hideToast();
+  }
+}
+
 module.exports = {
   formatTime,
   request,
   redirect,
-  showErrorToast
+  showErrorToast,
+  showLoading,
+  hideLoading
 }

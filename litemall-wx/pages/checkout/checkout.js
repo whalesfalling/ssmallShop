@@ -131,6 +131,7 @@ Page({
       util.showErrorToast('请选择收货地址');
       return false;
     }
+    util.showLoading("加载中...");
     util.request(api.OrderSubmit, {
       cartId: this.data.cartId,
       addressId: this.data.addressId,
@@ -155,22 +156,26 @@ Page({
               'signType': payParam.signType,
               'paySign': payParam.paySign,
               'success': function(res) {
+                util.hideLoading();
                 console.log("支付过程成功");
                 wx.redirectTo({
                   url: '/pages/payResult/payResult?status=1&orderId=' + orderId
                 });
               },
               'fail': function(res) {
+                util.hideLoading();
                 console.log("支付过程失败");
                 wx.redirectTo({
                   url: '/pages/payResult/payResult?status=0&orderId=' + orderId
                 });
               },
               'complete': function(res) {
+                util.hideLoading();
                 console.log("支付过程结束")
               }
             });
           } else {
+            util.hideLoading();
             wx.redirectTo({
               url: '/pages/payResult/payResult?status=0&orderId=' + orderId
             });
@@ -178,11 +183,7 @@ Page({
         });
 
       } else {
-        wx.showToast({
-          title: res.errmsg,
-          icon: 'none',
-          duration: 2000
-        });
+        util.hideLoading();
       }
     });
   }
