@@ -6,6 +6,7 @@ import org.linlinjava.litemall.core.system.SystemConfig;
 import org.linlinjava.litemall.db.domain.LitemallGoodsProduct;
 import org.linlinjava.litemall.db.domain.LitemallOrder;
 import org.linlinjava.litemall.db.domain.LitemallOrderGoods;
+import org.linlinjava.litemall.db.service.LitemallCreditsService;
 import org.linlinjava.litemall.db.service.LitemallGoodsProductService;
 import org.linlinjava.litemall.db.service.LitemallOrderGoodsService;
 import org.linlinjava.litemall.db.service.LitemallOrderService;
@@ -15,6 +16,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -31,6 +33,8 @@ public class OrderJob {
     private LitemallOrderService orderService;
     @Autowired
     private LitemallGoodsProductService productService;
+    @Autowired
+    private LitemallCreditsService creditsService;
 
     /**
      * 自动取消订单
@@ -64,6 +68,11 @@ public class OrderJob {
                 if (productService.addStock(productId, number) == 0) {
                     throw new RuntimeException("商品货品库存增加失败");
                 }
+            }
+
+            // 返还积分
+            if (order.getIntegral() != null && order.getIntegral().compareTo(BigDecimal.ZERO) != 0) {
+                creditsService.getBackCredits(order.getUserId(), order.getIntegral());
             }
             logger.info("订单 ID" + order.getId() + " 已经超期自动取消订单");
         }

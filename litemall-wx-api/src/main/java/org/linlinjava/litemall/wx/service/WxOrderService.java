@@ -22,7 +22,6 @@ import org.linlinjava.litemall.core.util.JacksonUtil;
 import org.linlinjava.litemall.core.util.ResponseUtil;
 import org.linlinjava.litemall.db.domain.*;
 import org.linlinjava.litemall.db.service.*;
-import org.linlinjava.litemall.db.util.CouponUserConstant;
 import org.linlinjava.litemall.db.util.OrderHandleOption;
 import org.linlinjava.litemall.db.util.OrderUtil;
 import org.linlinjava.litemall.core.util.IpUtil;
@@ -105,7 +104,9 @@ public class WxOrderService {
 //    @Autowired
 //    private CouponVerifyService couponVerifyService;
     @Autowired
-    private WxCreditsService creditsService;
+    private WxCreditsService wxCreditsService;
+    @Autowired
+    private LitemallCreditsService creditsService;
     @Autowired
     private CreditsRuleService creditsRuleService;
 
@@ -319,7 +320,7 @@ public class WxOrderService {
         BigDecimal creditsPrice = new BigDecimal(0.00);
         // 是否使用积分
         if (useCredits == 1) {
-            if (creditsService.getMyCredits(userId).getCredits().compareTo(credits) == -1) {
+            if (wxCreditsService.getMyCredits(userId).getCredits().compareTo(credits) == -1) {
                 return ResponseUtil.fail(CREDITS_UP, "积分发生变动");
             }
 
@@ -334,6 +335,8 @@ public class WxOrderService {
             if (creditsPrice.compareTo(checkedGoodsPrice) == 1) {
                 return ResponseUtil.fail(CREDITS_ERROR, "积分使用异常");
             }
+        } else {
+            credits = BigDecimal.ZERO;
         }
 
 
@@ -427,7 +430,7 @@ public class WxOrderService {
 //        }
 
         // 如果使用了积分,修改积分值
-        creditsService.useCredits(userId, credits);
+        wxCreditsService.useCredits(userId, credits);
 
         //如果是团购项目，添加团购信息
         if (grouponRulesId != null && grouponRulesId > 0) {
@@ -515,7 +518,7 @@ public class WxOrderService {
 
         // 返还积分
         if (order.getIntegral() != null && order.getIntegral().compareTo(BigDecimal.ZERO) != 0) {
-            creditsService.getBackCredits(userId, order.getIntegral());
+            creditsService.getBackCredits(order.getUserId(), order.getIntegral());
         }
 
         return ResponseUtil.ok();

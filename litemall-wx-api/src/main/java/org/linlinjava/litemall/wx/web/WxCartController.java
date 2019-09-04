@@ -469,7 +469,6 @@ public class WxCartController {
             // 如果积分可抵扣价格大于商品价格
             if (maxCreditsPrice.compareTo(checkedGoodsPrice) == 1) {
                 maxCreditsPrice = checkedGoodsPrice.setScale(0, BigDecimal.ROUND_DOWN);
-                usableCredits = false;
             }
             maxCredits = maxCreditsPrice.multiply(creditsRatio);
         }

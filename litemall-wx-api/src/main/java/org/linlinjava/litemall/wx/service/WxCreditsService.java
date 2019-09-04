@@ -95,27 +95,6 @@ public class WxCreditsService {
     }
 
     @Transactional
-    public void getBackCredits(Integer userId, BigDecimal credits) {
-        PpUserCreditsExample example =
-                PpUserCreditsExample.newAndCreateCriteria().andUserIdEqualTo(userId).example();
-        PpUserCredits userCredits = ppUserCreditsMapper.selectOneByExample(example);
-        if (userCredits != null) {
-            PpUserCreditsLog log = new PpUserCreditsLog();
-            log.setUserId(userId);
-            log.setCredits(credits);
-            log.setGainDate(LocalDate.now());
-            log.setAddTime(LocalDateTime.now());
-            log.setState(2);
-            log.setEvent("积分返还");
-            ppUserCreditsLogMapper.insert(log);
-
-            userCredits.setCredits(userCredits.getCredits().add(credits));
-            userCredits.setUpdateTime(LocalDateTime.now());
-            ppUserCreditsMapper.updateByPrimaryKey(userCredits);
-        }
-    }
-
-    @Transactional
     public void useCredits(Integer userId, BigDecimal credits) {
         if(credits == null || credits.compareTo(BigDecimal.ZERO)==0){
             return;
