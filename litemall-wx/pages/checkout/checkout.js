@@ -131,7 +131,11 @@ Page({
       util.showErrorToast('请选择收货地址');
       return false;
     }
-    util.showLoading("加载中...");
+    if (this.data.useCredits != 0 && this.data.maxCreditsPrice == 0){
+      util.showErrorToast('无积分抵扣');
+      return false;
+    }
+    util.showLoading("系统加载中...");
     util.request(api.OrderSubmit, {
       cartId: this.data.cartId,
       addressId: this.data.addressId,
