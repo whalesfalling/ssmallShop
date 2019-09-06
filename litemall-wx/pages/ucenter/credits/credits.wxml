@@ -13,8 +13,10 @@
             <image class="jinbi-view" src="/static/images/jinbi.png"></image>
             <view class="event">{{iitem.event}}</view>
             <view class="date">{{iitem.gainDate}}</view>
-            <view class="credits" wx:if="{{iitem.state==0}}">- {{iitem.credits}}</view>
-            <view class="credits" wx:else>+ {{iitem.credits}}</view>
+            <view class="credits" style="color:green;margin-button:2rpx;" wx:if="{{iitem.state==0}}">-</view>
+            <view class="credits" style="color:#b4282d;" wx:else>+</view>
+            <view class="cc" style="color:green;" wx:if="{{iitem.state==0}}"> {{iitem.credits}}</view>
+            <view class="cc" style="color:#b4282d;" wx:else> {{iitem.credits}}</view>
         </view>
       </view>
     </view>

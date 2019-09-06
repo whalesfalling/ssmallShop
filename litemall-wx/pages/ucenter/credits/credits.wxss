@@ -11,6 +11,10 @@ page {
   overflow: hidden;
 }
 
+.cc {
+margin-left: 8rpx;
+}
+
 .no-footprint {
   width: 100%;
   height: auto;
@@ -113,6 +117,7 @@ page {
   font-size: 38rpx;
   color: #333;
   margin-left: 100rpx;
+  width:25rpx;
 }
 
 .item .event {
