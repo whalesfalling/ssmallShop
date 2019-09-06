@@ -12,7 +12,7 @@ Page({
   },
   getCreditsInfo() {
     wx.showLoading({
-      title: '加载中...',
+      title: '系统加载中...',
     });
     let that = this;
     util.request(api.CreditsLogList, {
@@ -45,7 +45,7 @@ Page({
   onLoad: function(options) {
     this.getCreditsInfo();
   },
-  onReachBottom() {
+  onReachBottom: function() {
     if (this.data.totalPages > this.data.page) {
       this.setData({
         page: this.data.page + 1

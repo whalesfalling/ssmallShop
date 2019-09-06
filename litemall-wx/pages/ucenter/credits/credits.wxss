@@ -79,7 +79,7 @@ page {
 
 .day-list {
   width: 100%;
-  height: auto;
+  height: 100%;
   overflow: hidden;
   background: #fff;
   padding-left: 30rpx;
@@ -87,10 +87,11 @@ page {
 }
 
 .item {
-  height: 112rpx;
+  display: flex;
+  height: 120rpx;
   width: 720rpx;
   background: #fff;
-  padding: 30rpx 30rpx 30rpx 0;
+  align-items: center;
   border-bottom: 1px solid #e1e1e1;
 }
 
@@ -111,28 +112,19 @@ page {
 .item .credits {
   font-size: 38rpx;
   color: #333;
-  line-height: 40rpx;
-  float: right;
-  margin-right: 30rpx;
-  min-width: 100rpx;
+  margin-left: 100rpx;
 }
 
 .item .event {
-  margin-top: 5rpx;
   font-size: 30rpx;
   color: #333;
-  line-height: 40rpx;
-  float: left;
   margin-left: 50rpx;
 }
 
 .item .date {
-  margin-top: 5rpx;
   font-size: 24rpx;
   color: #888;
-  line-height: 40rpx;
-  float: right;
-  margin-right: 20rpx;
+  margin-left: 50rpx;
 }
 
 .jinbi-view {

@@ -11,10 +11,10 @@
       <view class="day-list" wx:if="{{item.length > 0}}">
         <view class="item" data-index="{{index}}" data-iindex="{{iindex}}" wx:for="{{item}}" wx:for-index="iindex" wx:for-item="iitem" wx:key="id">
             <image class="jinbi-view" src="/static/images/jinbi.png"></image>
-            <view class="credits" wx:if="{{iitem.state==0}}">- {{iitem.credits}}</view>
-            <view class="credits" wx:else>+ {{iitem.credits}}</view>
             <view class="event">{{iitem.event}}</view>
             <view class="date">{{iitem.gainDate}}</view>
+            <view class="credits" wx:if="{{iitem.state==0}}">- {{iitem.credits}}</view>
+            <view class="credits" wx:else>+ {{iitem.credits}}</view>
         </view>
       </view>
     </view>
