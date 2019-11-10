@@ -7,7 +7,7 @@
   <!-- 分享 -->
   <view class='goods_name'>
     <view class='goods_name_left'>{{goods.name}}</view>
-    <view hidden="{{!canShare}}" class="goods_name_right" bindtap="shareFriendOrCircle">
+    <view class="goods_name_right" bindtap="shareFriendOrCircle">
       <image class='share_image' src='/static/images/share.png'></image>
       <view class='share_text'>分 享</view>
     </view>

@@ -7,10 +7,10 @@ pagehelper:
 spring:
   datasource:
     druid:
-      url:  jdbc:mysql://148.70.134.173:3306/pinpin_shopmall?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+      url:  jdbc:mysql://39.107.122.113:3306/shopmall?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
       driver-class-name:  com.mysql.jdbc.Driver
-      username:  admin
-      password:  123456
+      username:  luotao
+      password:  '!@#123QWEqwe'
       initial-size:  10
       max-active:  50
       min-idle:  10
